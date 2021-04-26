@@ -1,0 +1,106 @@
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin:0%;
+    padding:0%;
+    background: url(imagens/plano-de-fundo.jpg);
+    color: white;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+.topo {
+    background: #313030d2;
+    position: relative;
+    padding: 1rem;
+}
+#logo {
+    position: absolute;
+    max-width: 15%;
+    top: 0%;
+    left: 0px;
+}
+.titulo-principal, .name  {
+    font-size: "Open Sans Condensed", Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+}
+#texto-inicio {
+
+    text-align: center;
+}
+#body {
+
+    position: relative;
+    width: 95%;
+    max-width: 90%;
+    margin: auto ;
+    background: #313030d2;
+    padding:  40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    bottom: 20px;
+}
+#input{
+    border:none;
+    border-radius: 5px;
+}
+table{
+    position:relative;
+    width: 100%;
+    margin: auto;
+    background: #313030d2;
+    border:3px solid black;
+    border-collapse: collapse;
+}
+td{
+    text-align: center;
+    position: relative;
+    border:3px solid black;
+    border-radius: 10px;
+}
+.mot {
+    position: relative;
+    width: 200px;
+    border-style: solid;
+    border-color: #0e0909;
+    border-width: 2px;
+
+}
+.btn {
+
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    color: #ffffff;
+    background: #111010c4;
+
+}
+li {
+    text-align: left;
+
+}
+#btn {
+
+    position: relative;
+    left: 88%;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    color: #ffffff;
+    background: #111010c4;
+    margin-top: 3%;
+    margin-right: 5%;
+
+}
+#footer{
+
+    position: absolute ;
+    background: #252424c4;
+    left: 0%;
+    height: 60px;
+    width: 100%;
+
+}
