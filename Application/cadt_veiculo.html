@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cadt_veiculo.css">
+    <title>Cadastro Veículos - LocFleet</title>
+</head>
+<body>
+
+    <header id="topo">
+        <img id="logo" src="imagens/Logo.png" alt="Logo">
+        <h1 class="titulo-principal">LocFleet</h1>
+        <h3 class="name">Cadastro de Veículos</h3>
+      </header>
+
+    <div id="body">
+        
+        <h2><p>campo para a inserção de novos veículos.</p></h2>
+
+        <div>
+            <form action="LocFleet@una.com.br" method="GET">
+                <table>
+                    <tr>
+                        <td><b>Modelo:</b></td>
+                        <td><input type="text" class="seletor" name="modelo" value="Ex.Gol"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Marca:</b></td>
+                        <td><input type="text" class="seletor" name="marca" value="Ex.Volkswagen"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Ano:</b></td>
+                        <td><input type="number" class="seletor" name="ano"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Placa:</b></td>
+                        <td><input type="text" class="seletor" name="placa" maxlength="8" value="Ex.abc-0000"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Renavam:</b></td>
+                        <td><input type="number" class="seletor" name="renavam" maxlength="11" ></td>
+                    </tr>
+                    <tr>
+                        <td><b>Adicione uma foto do Veículo:</b></td>
+                        <td><input type="file" class="seletor" name="foto"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Situação:</b></td>
+                        <td><select name="situacao" class="seletor">
+                              <option value="otimo">Ótimo</option>
+                              <option value="bom">Bom</option>
+                              <option value="mediano">Mediano</option>
+                              <option value="audi">Ruim</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><b>Quilometragem:</b></td>
+                        <td><input type="number" class="seletor" name="quilometragem" maxlength="30"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Localização:</b></td>
+                        <td><input type="text" class="seletor" name="localizacao" maxlength="100" value="Ex.Lourdes (Belo Horizonte)"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Valor da Locação:</b></td>
+                        <td><input type="number" class="seletor" name="valo_loc" maxlength="100"></td>
+                    </tr>
+                </table>
+                <div id="btn_selct">
+                    <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
+                    <input type="reset" class="btn" name="btn-limpar" value="Limpar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p><h3>@LocFleet - Aproveite nossos Serviços</h3></p>
+    </div>
+</body>
+</html>

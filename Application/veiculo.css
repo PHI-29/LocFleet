@@ -1,3 +1,4 @@
+  /**CSS Document**/
 
 html, body {
     width: 100%;
@@ -9,10 +10,11 @@ html, body {
     font-family: sans-serif;
     line-height: 1.5;
 }
-.topo {
-    background: #313030d2;
+#topo {
+    background: rgba(255, 255, 255, 0.87);
     position: relative;
     padding: 1rem;
+    color: black;
 }
 #logo {
     position: absolute;
@@ -67,6 +69,7 @@ td{
     border-style: solid;
     border-color: #0e0909;
     border-width: 2px;
+    margin: 5px;
 
 }
 .btn {
@@ -99,7 +102,8 @@ li {
 #footer{
 
     position: absolute ;
-    background: #252424c4;
+    background: rgba(255, 255, 255, 0.87);
+    color: black;
     left: 0%;
     height: 60px;
     width: 100%;
