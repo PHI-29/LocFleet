@@ -28,10 +28,6 @@ html, body {
     margin: 0 auto;
     max-width: 50%;
 }
-#texto-inicio {
-
-    text-align: center;
-}
 #body {
 
     position: relative;
@@ -44,31 +40,35 @@ html, body {
     border-radius: 10px;
     bottom: 20px;
 }
-#input{
-    border:none;
-    border-radius: 5px;
-}
-table{
-    position:relative;
-    width: 100%;
-    margin: auto;
-    background: #313030d2;
-    border:3px solid black;
-    border-collapse: collapse;
-}
-td{
-    text-align: center;
+#carro {
     position: relative;
-    border:3px solid black;
-    border-radius: 10px;
-}
-.mot {
-    position: relative;
-    width: 200px;
+    float: right;
+    width: 400px;
     border-style: solid;
     border-color: #0e0909;
     border-width: 2px;
-    margin: 5px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+table{
+    position: relative;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid black;
+}
+td{
+
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#btn_selct {
+
+    position: relative;
+    width: 200px;
 
 }
 .btn {
@@ -76,9 +76,11 @@ td{
     position: relative;
     border-radius: 5px;
     border: none;
-    padding: 10px;
+    padding: 15px;
     color: #ffffff;
     background: #111010c4;
+    margin-top: 3%;
+    margin-right: 20px;
 
 }
 .btn:hover{
@@ -88,37 +90,11 @@ td{
     background: #ffffff;
 
 }
-li {
-    text-align: left;
-
-}
-#btn {
-
-    position: relative;
-    left: 88%;
-    border-radius: 5px;
-    border: none;
-    padding: 15px;
-    color: #ffffff;
-    background: #111010c4;
-    margin-top: 3%;
-    margin-right: 5%;
-
-}
-#btn:hover{
-
-    
-    color: #111010c4;
-    background: #ffffff;
-
-}
 #footer{
-
     position: absolute ;
     background: rgba(255, 255, 255, 0.87);
     color: black;
     left: 0%;
     height: 60px;
     width: 100%;
-
 }

@@ -82,6 +82,14 @@ td{
     background: #111010c4;
 
 }
+
+.btn:hover{
+
+    
+    color: #111010c4;
+    background: #ffffff;
+
+}
 li {
     text-align: left;
 
@@ -97,6 +105,14 @@ li {
     background: #111010c4;
     margin-top: 3%;
     margin-right: 3%;
+
+}
+
+#btn:hover{
+
+    
+    color: #111010c4;
+    background: #ffffff;
 
 }
 #footer{
