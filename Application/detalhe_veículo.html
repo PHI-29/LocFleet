@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/detalhe_veiculo.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <script type="text/JavaScript" src="Script/script_dt_veiculo.js"></script>
+    <Script type="text/JavaScript" src="Script/Script_header.js"></Script>
     <title>Detalhe Veículos - LocFleet</title>
 </head>
 
@@ -15,27 +16,41 @@
     <header>
         <nav>
             <div>
-                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+                <button class="btn_menu_li" onclick="redireciona_home()">
+                    <img class="logo" src="CSS/imagens/Logo.png" alt="Logo"></button>
             </div>
             <button class="btn_menu">&#9776;</button>
             <ul class="ul">
                 <li class="li">
-                    <p>Perfil</p>
+                    <button class="btn_menu_li" onclick="redireciona_perfil()">
+                        <p>Perfil</p>
+                    </button>
+                </li>
+
+                <li class="li"><button class="btn_menu_li" onclick="redireciona_frota()">
+                        <p>Frota</p>
+                    </button>
+
                 </li>
                 <li class="li">
-                    <p>Frota</p>
+                    <button class="btn_menu_li" onclick="redireciona_motorista()">
+                        <p>Motorista</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Motorista</p>
+                    <button class="btn_menu_li" onclick="redireciona_notificacoes()">
+                        <p>Notificações</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Notificações</p>
+                    <button class="btn_menu_li" onclick="redireciona_financeiro()">
+                        <p>Ficanceiro</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Ficanceiro</p>
-                </li>
-                <li class="li">
-                    <p>Saiba Mais</p>
+                    <button class="btn_menu_li" onclick="redireciona_mais()">
+                        <p>Saiba Mais</p>
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -133,7 +148,8 @@
                 </table>
             </section>
             <section id="btn_selct">
-                <button type="button" class="btn" name="Mot_veiculo" onclick="redireciona()">Verificar Motorista do Veículo</button>
+                <button type="button" class="btn" name="Mot_veiculo" onclick="redireciona()">Verificar Motorista do
+                    Veículo</button>
                 <button type="button" class="btn" name="remover" onclick="remover()">Remover Veículo</button>
             </section>
         </article>

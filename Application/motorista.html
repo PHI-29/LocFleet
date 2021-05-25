@@ -8,49 +8,64 @@
     <link rel="stylesheet" href="CSS/motorista.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <script type="text/JavaScript" src="Script/script_motorista.js"></script>
+    <Script type="text/JavaScript" src="Script/Script_header.js"></Script>
     <title>Motoristas - LocFleet</title>
 </head>
-    
+
 <body>
     <header>
         <nav>
             <div>
-                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+                <button class="btn_menu_li" onclick="redireciona_home()">
+                    <img class="logo" src="CSS/imagens/Logo.png" alt="Logo"></button>
             </div>
             <button class="btn_menu">&#9776;</button>
             <ul class="ul">
                 <li class="li">
-                    <p>Perfil</p>
+                    <button class="btn_menu_li" onclick="redireciona_perfil()">
+                        <p>Perfil</p>
+                    </button>
+                </li>
+
+                <li class="li"><button class="btn_menu_li" onclick="redireciona_frota()">
+                        <p>Frota</p>
+                    </button>
+
                 </li>
                 <li class="li">
-                    <p>Frota</p>
+                    <button class="btn_menu_li" onclick="redireciona_motorista()">
+                        <p>Motorista</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Motorista</p>
+                    <button class="btn_menu_li" onclick="redireciona_notificacoes()">
+                        <p>Notificações</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Notificações</p>
+                    <button class="btn_menu_li" onclick="redireciona_financeiro()">
+                        <p>Ficanceiro</p>
+                    </button>
                 </li>
                 <li class="li">
-                    <p>Ficanceiro</p>
-                </li>
-                <li class="li">
-                    <p>Saiba Mais</p>
+                    <button class="btn_menu_li" onclick="redireciona_mais()">
+                        <p>Saiba Mais</p>
+                    </button>
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <article >
+        <article>
             <section>
 
                 <h4 id="texto-inicio">Visualize os motoristas cadastrados e contrate mais</h4>
 
-                <label for="txtLogon">Busque um motoristas:</label>
-                <input type="text" name="veiculo" value="Ex: André">
+                <label for="veiculo">Busque um motoristas:</label>
+                <input type="text" name="veiculo" placeholder="Ex: André">
 
-                <button class="btn_add" type="button">Adicionar novo motoristas.
+                <button class="btn_add" type="button" onclick="add_motorista()">Adicionar novo motoristas.
                 </button>
 
                 <hr>

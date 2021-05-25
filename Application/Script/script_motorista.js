@@ -2,6 +2,9 @@ window.onload = function(){
     cadastrar_dados();
 }
 
+function add_motorista(){
+    window.location.href="cadt_motorista.html";
+}
 
 async function cadastrar_dados(){
     let req = await fetch('https://my-json-server.typicode.com/PedroIsidorio29/apiFake/motoristas');

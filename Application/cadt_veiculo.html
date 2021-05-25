@@ -7,120 +7,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/cadt_veiculo.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <Script type="text/JavaScript" src="Script/Script_header.js"></Script>
     <title>Cadastro Veículos - LocFleet</title>
 </head>
 
-<header>
-    <nav>
-        <div>
-            <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
-        </div>
-        <button class="btn_menu">&#9776;</button>
-        <ul class="ul">
-            <li class="li">
-                <p>Perfil</p>
-            </li>
-            <li class="li">
-                <p>Frota</p>
-            </li>
-            <li class="li">
-                <p>Motorista</p>
-            </li>
-            <li class="li">
-                <p>Notificações</p>
-            </li>
-            <li class="li">
-                <p>Ficanceiro</p>
-            </li>
-            <li class="li">
-                <p>Saiba Mais</p>
-            </li>
-        </ul>
-    </nav>
-</header>
+<body>
 
-<main>
-    <article>
-        <section>
-            <h2>
-            <p>Campo para a inserção de novos veículos.</p>
-        </h2>
 
-        <hr>
-        </section>
-        <section>
-            <form action="LocFleet@una.com.br" method="GET">
-                <table>
-                    <tr>
-                        <td><b>Modelo:</b></td>
-                        <td><input type="text" class="seletor" name="modelo" value="Ex.Gol"></td>
-                    </tr>
-                    <tr>
-                        <td><b>marca:</b></td>
-                        <td><input type="text" class="seletor" name="marca" value="Ex.Volkswagen"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Ano:</b></td>
-                        <td><input type="number" class="seletor" name="ano"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Placa:</b></td>
-                        <td><input type="text" class="seletor" name="placa" maxlength="8" value="Ex.abc-0000"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Renavam:</b></td>
-                        <td><input type="number" class="seletor" name="renavam" maxlength="11"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Cor:</b></td>
-                        <td><input type="text" class="seletor" name="cor" maxlength="11"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Situação:</b></td>
-                        <td><select name="situacao" class="seletor">
-                                <option value="otimo">Ótimo</option>
-                                <option value="bom">Bom</option>
-                                <option value="mediano">Mediano</option>
-                                <option value="ruim">Ruim</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td><b>Quilometragem:</b></td>
-                        <td><input type="number" class="seletor" name="quilometragem" maxlength="30"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Localização:</b></td>
-                        <td><input type="text" class="seletor" name="localizacao" maxlength="100"
-                                value="Ex.Lourdes (Belo Horizonte)"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Valor da Locação:</b></td>
-                        <td><input type="number" class="seletor" name="valo_loc" maxlength="100"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Última Revisão:</b></td>
-                        <td><input type="text" class="seletor" name="revisao" maxlength="100"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Adicione uma foto do Veículo:</b></td>
-                        <td><input type="file" class="seletor" name="foto"></td>
-                    </tr>
-                </table>
-                <div id="btn_selct">
-                    <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
-                    <input type="reset" class="btn" name="btn-limpar" value="Limpar">
-                </div>
-            </form>
-        </section>
-    </article>
-</main>
+    <header>
+        <nav>
+            <div>
+                <button class="btn_menu_li" onclick="redireciona_home()">
+                    <img class="logo" src="CSS/imagens/Logo.png" alt="Logo"></button>
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_perfil()">
+                        <p>Perfil</p>
+                    </button>
+                </li>
+
+                <li class="li"><button class="btn_menu_li" onclick="redireciona_frota()">
+                        <p>Frota</p>
+                    </button>
+
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_motorista()">
+                        <p>Motorista</p>
+                    </button>
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_notificacoes()">
+                        <p>Notificações</p>
+                    </button>
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_financeiro()">
+                        <p>Ficanceiro</p>
+                    </button>
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_mais()">
+                        <p>Saiba Mais</p>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>
+                    <p>Campo para a inserção de novos veículos.</p>
+                </h2>
+
+                <hr>
+            </section>
+            <section>
+                <form action="LocFleet@una.com.br" method="GET">
+                    <table>
+                        <tr>
+                            <td><b>Modelo:</b></td>
+                            <td><input type="text" class="seletor" name="modelo" placeholder="Ex: Gol"></td>
+                        </tr>
+                        <tr>
+                            <td><b>marca:</b></td>
+                            <td><input type="text" class="seletor" name="marca" placeholder="Ex: Volkswagen"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Ano:</b></td>
+                            <td><input type="number" class="seletor" name="ano" placeholder="Ex: 2010"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Placa:</b></td>
+                            <td><input type="text" class="seletor" name="placa" maxlength="8" placeholder="Ex: abc-0000"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Renavam:</b></td>
+                            <td><input type="number" class="seletor" name="renavam" maxlength="11" placeholder="000000000"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Cor:</b></td>
+                            <td><input type="text" class="seletor" name="cor" maxlength="11" placeholder="branco"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Situação:</b></td>
+                            <td><select name="situacao" class="seletor">
+                                    <option value="otimo">Ótimo</option>
+                                    <option value="bom">Bom</option>
+                                    <option value="mediano">Mediano</option>
+                                    <option value="ruim">Ruim</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><b>Quilometragem:</b></td>
+                            <td><input type="number" class="seletor" name="quilometragem" maxlength="30" placeholder="EX: 2.000"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Localização:</b></td>
+                            <td><input type="text" class="seletor" name="localizacao" maxlength="100"
+                                    placeholder="Ex: Lourdes (Belo Horizonte)"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Valor da Locação: (Mensal R$)</b></td>
+                            <td><input type="number" class="seletor" name="valo_loc" maxlength="100" placeholder="Ex: 300"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Última Revisão: (dados em mês)</b></td>
+                            <td><input type="text" class="seletor" name="revisao" maxlength="100" placeholder="5"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Adicione uma foto do Veículo:</b></td>
+                            <td><input type="file" class="seletor" name="foto"></td>
+                        </tr>
+                    </table>
+                    <div id="btn_selct">
+                        <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
+                        <input type="reset" class="btn" name="btn-limpar" value="Limpar">
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
 
     <footer>
         <p>
         <h3>@LocFleet - Aproveite nossos Serviços</h3>
         </p>
     </footer>
-    
+
 </body>
 
 </html>

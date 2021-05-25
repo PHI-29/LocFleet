@@ -44,10 +44,13 @@ nav,
     top: 10px;
     display: none;
 }
-
-.li:hover,
+.btn_menu_li{
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
 .btn_menu:hover,
-.logo:hover {
+.btn_menu_li:hover {
     cursor: pointer;
     opacity: 0.8;
     background-color: rgba(255, 255, 255, 0.2);

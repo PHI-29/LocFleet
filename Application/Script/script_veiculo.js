@@ -2,6 +2,9 @@ window.onload = function(){
     cadastrar_dados();
 }
 
+function add_veiculo(){
+    window.location.href="cadt_veiculo.html";
+}
 
 async function cadastrar_dados(){
     let req = await fetch('https://my-json-server.typicode.com/PedroIsidorio29/apiFake/veiculos');
@@ -26,3 +29,4 @@ async function cadastrar_dados(){
        
     });
 }
+
