@@ -6,26 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/cadt_veiculo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <title>Cadastro Veículos - LocFleet</title>
 </head>
 
-<body>
+<header>
+    <nav>
+        <div>
+            <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+        </div>
+        <button class="btn_menu">&#9776;</button>
+        <ul class="ul">
+            <li class="li">
+                <p>Perfil</p>
+            </li>
+            <li class="li">
+                <p>Frota</p>
+            </li>
+            <li class="li">
+                <p>Motorista</p>
+            </li>
+            <li class="li">
+                <p>Notificações</p>
+            </li>
+            <li class="li">
+                <p>Ficanceiro</p>
+            </li>
+            <li class="li">
+                <p>Saiba Mais</p>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-    <header id="topo">
-        <img id="logo" src="CSS/imagens/Logo.png" alt="Logo">
-        <h1 class="titulo-principal">LocFleet</h1>
-        <h3 class="name">Cadastro de Veículos</h3>
-    </header>
-
-    <div id="body">
-
-        <h2>
+<main>
+    <article>
+        <section>
+            <h2>
             <p>Campo para a inserção de novos veículos.</p>
         </h2>
 
         <hr>
-        
-        <div>
+        </section>
+        <section>
             <form action="LocFleet@una.com.br" method="GET">
                 <table>
                     <tr>
@@ -33,7 +56,7 @@
                         <td><input type="text" class="seletor" name="modelo" value="Ex.Gol"></td>
                     </tr>
                     <tr>
-                        <td><b>Montadora:</b></td>
+                        <td><b>marca:</b></td>
                         <td><input type="text" class="seletor" name="marca" value="Ex.Volkswagen"></td>
                     </tr>
                     <tr>
@@ -49,8 +72,8 @@
                         <td><input type="number" class="seletor" name="renavam" maxlength="11"></td>
                     </tr>
                     <tr>
-                        <td><b>Adicione uma foto do Veículo:</b></td>
-                        <td><input type="file" class="seletor" name="foto"></td>
+                        <td><b>Cor:</b></td>
+                        <td><input type="text" class="seletor" name="cor" maxlength="11"></td>
                     </tr>
                     <tr>
                         <td><b>Situação:</b></td>
@@ -58,7 +81,7 @@
                                 <option value="otimo">Ótimo</option>
                                 <option value="bom">Bom</option>
                                 <option value="mediano">Mediano</option>
-                                <option value="audi">Ruim</option>
+                                <option value="ruim">Ruim</option>
                             </select></td>
                     </tr>
                     <tr>
@@ -74,20 +97,29 @@
                         <td><b>Valor da Locação:</b></td>
                         <td><input type="number" class="seletor" name="valo_loc" maxlength="100"></td>
                     </tr>
+                    <tr>
+                        <td><b>Última Revisão:</b></td>
+                        <td><input type="text" class="seletor" name="revisao" maxlength="100"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Adicione uma foto do Veículo:</b></td>
+                        <td><input type="file" class="seletor" name="foto"></td>
+                    </tr>
                 </table>
                 <div id="btn_selct">
                     <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
                     <input type="reset" class="btn" name="btn-limpar" value="Limpar">
                 </div>
             </form>
-        </div>
-    </div>
+        </section>
+    </article>
+</main>
 
-    <div id="footer">
+    <footer>
         <p>
         <h3>@LocFleet - Aproveite nossos Serviços</h3>
         </p>
-    </div>
+    </footer>
     
 </body>
 

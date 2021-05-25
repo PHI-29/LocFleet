@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/detalhe_veiculo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <script type="text/JavaScript" src="Script/script_dt_veiculo.js"></script>
+    <title>Detalhe Veículos - LocFleet</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <p>Perfil</p>
+                </li>
+                <li class="li">
+                    <p>Frota</p>
+                </li>
+                <li class="li">
+                    <p>Motorista</p>
+                </li>
+                <li class="li">
+                    <p>Notificações</p>
+                </li>
+                <li class="li">
+                    <p>Ficanceiro</p>
+                </li>
+                <li class="li">
+                    <p>Saiba Mais</p>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <section>
+                <h2>
+                    <p>Visualize as informações do seu Veículo.</p>
+                </h2>
+
+                <hr>
+
+            </section>
+
+            <section>
+                <img id="carro" src="CSS/imagens/carros/Celta 2010.jpg" alt="carro celta">
+            </section>
+
+            <section>
+                <table>
+                    <tr>
+                        <th>Modelo:</th>
+                        <td>
+                            <p class="td" id="v_modelo"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Marca:</th>
+                        <td>
+                            <p class="td" id="v_marca"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Ano:</th>
+                        <td>
+                            <p class="td" id="v_ano"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Placa:</th>
+                        <td>
+                            <p class="td" id="v_placa"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Renavam:</th>
+                        <td>
+                            <p class="td" id="v_renav"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Cor:</th>
+                        <td>
+                            <p class="td" id="v_cor"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Situação:</th>
+                        <td>
+                            <p class="td" id="v_situacao"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Quilometragem:</th>
+                        <td>
+                            <p class="td" id="v_km"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Localização:</th>
+                        <td>
+                            <p class="td" id="v_loc"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Valor da Locação:</th>
+                        <td>
+                            <p class="td" id="v_val_loc"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Última Revisão:</th>
+                        <td>
+                            <p class="td" id="v_u_revisao"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Condutor Atual:</th>
+                        <td>
+                            <p class="td" id="v_c_atual"></p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section id="btn_selct">
+                <button type="button" class="btn" name="Mot_veiculo" onclick="redireciona()">Verificar Motorista do Veículo</button>
+                <button type="button" class="btn" name="remover" onclick="remover()">Remover Veículo</button>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+        <h3>@LocFleet - Aproveite nossos Serviços</h3>
+        </p>
+    </footer>
+</body>
+
+</html>

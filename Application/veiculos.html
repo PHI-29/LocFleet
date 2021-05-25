@@ -6,155 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/veiculo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <script type="text/JavaScript" src="Script/script_veiculo.js"></script>
     <title>Veículos - LocFleet</title>
 </head>
 
 <body>
-
-    <header id="topo">
-        <img id="logo" src="CSS/imagens/Logo.png" alt="Logo">
-        <h1 class="titulo-principal">LocFleet</h1>
-        <h3 class="name">Veículos</h3>
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <p>Perfil</p>
+                </li>
+                <li class="li">
+                    <p>Frota</p>
+                </li>
+                <li class="li">
+                    <p>Motorista</p>
+                </li>
+                <li class="li">
+                    <p>Notificações</p>
+                </li>
+                <li class="li">
+                    <p>Ficanceiro</p>
+                </li>
+                <li class="li">
+                    <p>Saiba Mais</p>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div id="body">
+    <main>
+        <article >
+            <section>
 
-        <h4 id="texto-inicio">Visualize os veículos cadastrados e adicione mais a sua frota</h4>
-        Busque um veículo: <input id="input" type="text" name="veiculo" value="Ex: celta">
+                <h4 id="texto-inicio">Visualize os veículos cadastrados e adicione mais a sua frota</h4>
 
-        <hr>
+                <label for="txtLogon">Busque um veículo:</label>
+                <input type="text" name="veiculo" value="Ex: celta">
 
-        <table>
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Celta 2010 - Prata</h3><br>
-                    <img class="carros" src="CSS/imagens/carros/Celta 2010.jpg" alt="Celta">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Veículo: Celta 2010</h6>
-                        </li>
-                        <li>
-                            <h6>Cor: Prata</h6>
-                        </li>
-                        <li>
-                            <h6>Placa: NAC-1509</h6>
-                        </li>
-                        <li>
-                            <h6>Último condutor: Jóse Antonio</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar veículo</button></td>
-            </tr>
+                <button class="btn_add" type="button">Adicionar novo veículo.
+                </button>
 
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Fiesta 2010 - Preto</h3><br>
-                    <img class="carros" src="CSS/imagens/carros/fiesta 2010.jpg" alt="Celta">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Veículo: Fiesta 2010</h6>
-                        </li>
-                        <li>
-                            <h6>Cor: Preto</h6>
-                        </li>
-                        <li>
-                            <h6>Placa: CNI-6092</h6>
-                        </li>
-                        <li>
-                            <h6>Último condutor: Helena Torres</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar veículo</button></td>
-            </tr>
+                <hr>
 
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Ford Ka 2015 - Prata</h3><br>
-                    <img class="carros" src="CSS/imagens/carros/ford Ka 2015.jpg" alt="Celta">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Veículo: Ford Ka</h6>
-                        </li>
-                        <li>
-                            <h6>Cor: Prata</h6>
-                        </li>
-                        <li>
-                            <h6>Placa: NAC-1509</h6>
-                        </li>
-                        <li>
-                            <h6>Último condutor: Amanda Luiza</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar veículo</button></td>
-            </tr>
+            </section>
+            <section>
 
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Hyundai HB20 2021 - Prata</h3><br>
-                    <img class="carros" src="CSS/imagens/carros/hb20 2021.jpg" alt="Celta">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Veículo: Hyundai HB20</h6>
-                        </li>
-                        <li>
-                            <h6>Cor: Prata</h6>
-                        </li>
-                        <li>
-                            <h6>Placa: NEQ-0370</h6>
-                        </li>
-                        <li>
-                            <h6>Último condutor: Jóse Antonio</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar veículo</button></td>
-            </tr>
 
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Fiat Uno 2002 - Preto</h3><br>
-                    <img class="carros" src="CSS/imagens/carros/uno 2002.jpg" alt="Celta">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Veículo: Fiat Uno</h6>
-                        </li>
-                        <li>
-                            <h6>Cor: Preto</h6>
-                        </li>
-                        <li>
-                            <h6>Placa: MVD-1530</h6>
-                        </li>
-                        <li>
-                            <h6>Último condutor: João souza</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar veículo</button></td>
-            </tr>
-        </table>
+                <table id="veiculos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cor</th>
+                            <th>Placa</th>
+                            <th>Último condutor</th>
+                            <th>Detalhes do veiculo</th>
+                        </tr>
+                    </thead>
 
-        <button id="btn" type="button">Adicionar novo veículo.
-        </button>
-    </div>
+                </table>
 
-    <div id="footer">
+            </section>
+        </article>
+    </main>
+
+    <footer>
         <p>
         <h3>@LocFleet - Aproveite nossos Serviços</h3>
         </p>
-    </div>
+    </footer>
 </body>
 
 </html>

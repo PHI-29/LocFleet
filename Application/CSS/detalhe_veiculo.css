@@ -10,25 +10,8 @@ html, body {
     font-family: sans-serif;
     line-height: 1.5;
 }
-#topo {
-    background: rgba(255, 255, 255, 0.87);
-    position: relative;
-    padding: 1rem;
-    color: black;
-}
-#logo {
-    position: absolute;
-    max-width: 15%;
-    top: 0%;
-    left: 0px;
-}
-.titulo-principal, .name  {
-    font-size: "Open Sans Condensed", Arial, sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 50%;
-}
-#body {
+
+main {
 
     position: relative;
     width: 95%;
@@ -72,22 +55,27 @@ td{
 
 }
 .btn {
-
+    font-weight: bold;
     position: relative;
     border-radius: 5px;
     border: none;
-    padding: 15px;
+    padding: 10px;
     color: #ffffff;
     background: #111010c4;
     margin-top: 3%;
     margin-right: 20px;
 
 }
-#footer{
-    position: absolute ;
-    background: rgba(255, 255, 255, 0.87);
-    color: black;
-    left: 0%;
-    height: 60px;
-    width: 100%;
+@media (max-width: 800px){
+    main {
+        position: relative;
+        width: 85%;
+        max-width: 80%;
+        margin: auto ;
+        background: #313030d2;
+        padding:  30px;
+        margin-top: 20px;
+        border-radius: 5px;
+        bottom: 10px;
+    }
 }

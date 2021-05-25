@@ -1,0 +1,226 @@
+    {"motoristas":[
+    {
+        "id": 1,
+        "nome": "Leanne Graham",
+        "sobrenome": "Bret",
+        "idade":31,
+        "cpf":"130.837.080-68",
+        "rg":"33.007.221-3",
+        "email": "Sincere@april.biz",
+        "data_nascimento":"15/10/1989",
+        "telefone": "1-770-736-8031 x56442",
+        "cnh":"45425078027",
+        "data_emissão":"26/05/2015",
+        "data_vencimento":"13/09/2023",
+        "placa_atual": "HSF-4752",
+        "endereço": {
+            "rua": "Kulas Light",
+            "numero": "Apt. 556",
+            "cidade": "Gwenborough",
+            "cep": "92998-3874"
+        }
+        
+    },
+    {
+        "id": 2,
+        "nome": "Filipe Cauê Vieira",
+        "sobrenome": "Amorim",
+        "idade":26,
+        "cpf":"656.058.844-09",
+        "rg":"32.131.545-5",
+        "email": "filipecauevieira@celiosilva.com",
+        "data_nascimento":"26/10/1995",
+        "telefone": "(87) 99391-4774",
+        "cnh":"64088622658",
+        "data_emissão":"13/08/2016",
+        "data_vencimento":"13/06/2026",
+        "placa_atual": "HLH-5341",
+        "endereço": {
+            "rua": "Praça Zacarias Virgínio, s/n",
+            "numero": "1000",
+            "cidade": "Alagoinha",
+            "cep": "55265-970"
+        }
+        
+    },
+    {
+        "id": 3,
+        "nome": "Anderson Lorenzo Campos",
+        "sobrenome": "Lopes",
+        "idade":61,
+        "cpf":"763.036.534-99",
+        "rg":"16.255.095-9",
+        "email": "iagokevinrezende@engemed.com",
+        "data_nascimento":"25/12/1960",
+        "telefone": "(87) 98191-0645",
+        "cnh":"19955440297",
+        "data_emissão":"13/08/2016",
+        "data_vencimento":"13/06/2026",
+        "placa_atual": "HCJ-2137",
+        "endereço": {
+            "rua": "Manoel Canuto Torres Galindo 35",
+            "numero": "213",
+            "cidade": "Alagoinha",
+            "cep": "55260-970"
+        }
+        
+    },
+    {
+        "id": 4,
+        "nome": "Valentina Liz Mendes",
+        "sobrenome": "Ferreira",
+        "idade":45,
+        "cpf":"068.038.923-79",
+        "rg":"33.007.221-3",
+        "email": "vvalentinalizmendes@vhbadvogados.com.br",
+        "data_nascimento":"03/06/1976",
+        "telefone": "(99) 98428-1181",
+        "cnh":"47477285200",
+        "data_emissão":"13/08/2016",
+        "data_vencimento":"13/06/2026",
+        "placa_atual": "HLZ-5725",
+        "endereço": {
+            "rua": "Humberto de Campos",
+            "numero": "511",
+            "cidade": "Amarante do Maranhão",
+            "cep": "65923-970"
+        }
+    },
+    {
+        "id": 5,
+        "nome": "Emanuel Otávio",
+        "sobrenome": "Carvalho",
+        "idade":28,
+        "cpf":"424.297.381-04",
+        "rg":"19.801.352-8",
+        "email": "emanuelotaviocarvalho@predilectasorocaba.com.br",
+        "data_nascimento":"13/07/1993",
+        "telefone": "(65) 99787-4328",
+        "cnh":"91705390597",
+        "data_emissão":"13/08/2016",
+        "data_vencimento":"13/06/2026",
+        "placa_atual": "GQQ-8439",
+        "endereço": {
+            "rua": "Quinze de Novembro",
+            "numero": "645",
+            "cidade": "Alto Paraguai",
+            "cep": "78410-970"
+        }
+        
+    },
+    {
+        "id": 6,
+        "nome": "Eliane Milena Eloá",
+        "sobrenome": "Campos",
+        "idade":26,
+        "cpf":"960.854.772-52",
+        "rg":"42.611.031-6",
+        "email": "elianemilenaeloacampos@10clic.com.br",
+        "data_nascimento":"04/05/1992",
+        "telefone": "(97) 99262-7805",
+        "cnh":"01215505617",
+        "data_emissão":"13/08/2016",
+        "data_vencimento":"13/06/2026",
+        "placa_atual": "GME-8205",
+        "endereço": {
+            "rua": "Avenida Castelo Branco",
+            "numero": "710",
+            "cidade": "Benjamin Constant",
+            "cep": "69630-970"
+        }
+        
+    }
+],
+    "veiculos":[
+        {
+            "id": 1,
+            "modelo":"Gol 1.6 Mi Rallye I MOTION T. Flex 8V 4p",
+            "marca":"VW - VolksWagen",
+            "ano":"2011",
+            "placa":"HSF-4752",
+            "renavam":"33611540459",
+            "cor":"Bege",
+            "situação":"Bom",
+            "quilometragem":"72.052",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"6 meses",
+            "condutor_atual":"Leanne Graham Bret"
+        },
+        {
+            "id": 2,
+            "modelo":"Golf GTi 2.0 TSI 220cv Aut.",
+            "marca":"VW - VolksWagen",
+            "ano":"2014",
+            "placa":"HLH-5341",
+            "renavam":"92700656105",
+            "cor":"Azul",
+            "situação":"Ótimo",
+            "quilometragem":"23.333",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"4 meses",
+            "condutor_atual":"Filipe Cauê Vieira Amorim"
+        },
+        {
+            "id": 3,
+            "modelo":"Golf Sportline 1.6 Mi Total Flex 8V 4p",
+            "marca":"VW - VolksWagen",
+            "ano":"2008",
+            "placa":"HCJ-2137",
+            "renavam":"24616150722",
+            "cor":"Amarelo",
+            "situação":"Ótimo",
+            "quilometragem":"450.324",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"1 meses",
+            "condutor_atual":"Anderson Lorenzo Campos Lopes"
+        },
+        {
+            "id": 4,
+            "modelo":"Fox Trendline 1.0 Flex 8V 5p",
+            "marca":"VW - VolksWagen",
+            "ano":"2015",
+            "placa":"HLZ-5725",
+            "renavam":"23260761779",
+            "cor":"Preto",
+            "situação":"Ruim",
+            "quilometragem":"33.125",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"4 meses",
+            "condutor_atual":"Valentina Liz Mendes Ferreira"
+        },
+        {
+            "id": 5,
+            "modelo":"SpaceCross I MOTION 1.6 Mi Total Flex 8V",
+            "marca":"VW - VolksWagen",
+            "ano":"2012",
+            "placa":"GQQ-8439",
+            "renavam":"82315448592",
+            "cor":"Bege",
+            "situação":"Bom",
+            "quilometragem":"12.543",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"7 meses",
+            "condutor_atual":"Emanuel Otávio Carvalho"
+        },
+        {
+            "id": 6,
+            "modelo":"VOYAGE I MOTION COMF/Hghli.1.6 T.Flex 8V",
+            "marca":"VW - VolksWagen",
+            "ano":"2010",
+            "placa":"GME-8205",
+            "renavam":"10592917522",
+            "cor":"Prata",
+            "situação":"Ótimo",
+            "quilometragem":"2.543",
+            "localização":"Pátio",
+            "valor_locação":"Pátio da empresa",
+            "ultima_revisão":"2 meses",
+            "condutor_atual":"Eliane Milena Eloá Campos"
+        }
+    ]
+}

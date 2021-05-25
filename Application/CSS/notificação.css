@@ -10,28 +10,7 @@ html, body {
     font-family: sans-serif;
     line-height: 1.5;
 }
-#topo {
-    background: rgba(255, 255, 255, 0.87);
-    position: relative;
-    padding: 1rem;
-    color: black;
-}
-#logo {
-    position: absolute;
-    max-width: 15%;
-    top: 0%;
-    left: 0px;
-}
-.titulo-principal, .name  {
-    font-size: "Open Sans Condensed", Arial, sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 50%;
-}
-#texto-inicio {
-    text-align: center;
-}
-#body {
+main {
     position: relative;
     width: 95%;
     max-width: 90%;

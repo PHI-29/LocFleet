@@ -6,150 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/motorista.css">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <script type="text/JavaScript" src="Script/script_motorista.js"></script>
     <title>Motoristas - LocFleet</title>
 </head>
-
+    
 <body>
-    <header id="topo">
-        <img id="logo" src="CSS/imagens/Logo.png" alt="Logo">
-        <h1 class="titulo-principal">LocFleet</h1>
-        <h3 class="name">Motoristas</h3>
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <p>Perfil</p>
+                </li>
+                <li class="li">
+                    <p>Frota</p>
+                </li>
+                <li class="li">
+                    <p>Motorista</p>
+                </li>
+                <li class="li">
+                    <p>Notificações</p>
+                </li>
+                <li class="li">
+                    <p>Ficanceiro</p>
+                </li>
+                <li class="li">
+                    <p>Saiba Mais</p>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div id="body">
+    <main>
+        <article >
+            <section>
 
-        <h4 id="texto-inicio">Visualize os motoristas cadastrados e contrate mais</h4>
-        Busque um motoristas: <input id="input" type="text" name="veiculo" value="Ex: André">
-        
-        <hr>
+                <h4 id="texto-inicio">Visualize os motoristas cadastrados e contrate mais</h4>
 
-        <table>
-            <tr class="linha_tabela">
-                <td>
-                    <h3>Caetana Aleixo</h3><br>
-                    <img class="mot" src="CSS/imagens/motorista/pessoa1.jfif" alt="Pessoa">
-                </td>
-                <td>
-                    <ul>
-                        <li>
-                            <h6>Motorista: Caetana Aleixo</h6>
-                        </li>
-                        <li>
-                            <h6>E-mail: caetana.aleixo@uni.com.br</h6>
-                        </li>
-                        <li>
-                            <h6>Telefone: (31)99966-5544</h6>
-                        </li>
-                        <li>
-                            <h6>Placa Atual: NEQ-0370</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar motorista</button></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>Leandra Abelho</h3><br>
-                    <img class="mot" src="CSS/imagens/motorista/pessoa2.jfif" alt="Pessoa">
-                </td>
-                <td>
-                    <ul class="atributos">
-                        <li>
-                            <h6>Motorista: Leandra Abelho</h6>
-                        </li>
-                        <li>
-                            <h6>E-mail: leandra.abelho@uni.com.br</h6>
-                        </li>
-                        <li>
-                            <h6>Telefone: (31)98866-1466</h6>
-                        </li>
-                        <li>
-                            <h6>Placa Atual: CNI-6092</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar motorista</button></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>André Valadão Mafra</h3><br>
-                    <img class="mot" src="CSS/imagens/motorista/pessoa3.jfif" alt="Pessoa">
-                </td>
-                <td>
-                    <ul class="atributos">
-                        <li>
-                            <h6>Motorista: André Valadão Mafra</h6>
-                        </li>
-                        <li>
-                            <h6>E-mail: andre.mafra@uni.com.br</h6>
-                        </li>
-                        <li>
-                            <h6>Telefone: (31)97526-4455</h6>
-                        </li>
-                        <li>
-                            <h6>Placa Atual: NAC-1509</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar motorista</button></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>Jairo Negrão Bouças</h3><br>
-                    <img class="mot" src="CSS/imagens/motorista/pessoa4.jfif" alt="Pessoa">
-                </td>
-                <td>
-                    <ul class="atributos">
-                        <li>
-                            <h6>Motorista: Jairo Negrão Bouças</h6>
-                        </li>
-                        <li>
-                            <h6>E-mail: jairo.boucas@uni.com.br</h6>
-                        </li>
-                        <li>
-                            <h6>Telefone: (31)98866-1717</h6>
-                        </li>
-                        <li>
-                            <h6>Placa Atual: Não possui veículo</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar motorista</button></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>Paloma Cartaxo Serpa</h3><br>
-                    <img class="mot" src="CSS/imagens/motorista/pessoa5.jfif" alt="Pessoa">
-                </td>
-                <td>
-                    <ul class="atributos">
-                        <li>
-                            <h6>Motorista: Paloma Cartaxo Serpa</h6>
-                        </li>
-                        <li>
-                            <h6>E-mail: paloma.serpa@uni.com.br</h6>
-                        </li>
-                        <li>
-                            <h6>Telefone: (31)97878-9954</h6>
-                        </li>
-                        <li>
-                            <h6>Placa Atual: MVD-1530</h6>
-                        </li>
-                    </ul>
-                </td>
-                <td><button class="btn" type="button">Visualizar motorista</button></td>
-            </tr>
-        </table>
+                <label for="txtLogon">Busque um motoristas:</label>
+                <input type="text" name="veiculo" value="Ex: André">
 
-        <button id="btn" type="button">Adicionar novo motorista</button>
-    </div>
+                <button class="btn_add" type="button">Adicionar novo motoristas.
+                </button>
 
-    <div id="footer">
+                <hr>
+
+            </section>
+            <section>
+
+
+                <table id="motorista">
+                    <thead>
+                        <tr>
+                            <th>Motorista</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Placa Atual</th>
+                            <th>Detalhes do motorista</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </section>
+        </article>
+    </main>
+
+    <footer>
         <p>
         <h3>@LocFleet - Aproveite nossos Serviços</h3>
         </p>
-    </div>
-
+    </footer>
 </body>
 
 </html>

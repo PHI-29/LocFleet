@@ -5,83 +5,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <link rel="stylesheet" type="text/css" href="CSS/cadt_motorista.css">
     <title>Cadastro Motorista - LocFleet</title>
 </head>
 
 <body>
-
-    <header id="topo">
-        <img id="logo" src="CSS/imagens/Logo.png" alt="Logo">
-        <h1 class="titulo-principal">LocFleet</h1>
-        <h3 class="name">Cadastro de Motorista</h3>
+    <header>
+        <nav>
+            <div>
+                <img class="logo" src="CSS/imagens/Logo.png" alt="Logo">
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <p>Perfil</p>
+                </li>
+                <li class="li">
+                    <p>Frota</p>
+                </li>
+                <li class="li">
+                    <p>Motorista</p>
+                </li>
+                <li class="li">
+                    <p>Notificações</p>
+                </li>
+                <li class="li">
+                    <p>Ficanceiro</p>
+                </li>
+                <li class="li">
+                    <p>Saiba Mais</p>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div id="body">
-
-        <h2>
-            <p>Campo para a inserção de novos Motorista.</p>
-        </h2>
-
-        <hr>
-        
-        <div>
-            <form action="LocFleet@una.com.br" method="GET">
-                <table>
-                    <tr>
-                        <td><b>Nome:</b></td>
-                        <td><input type="text" class="seletor" name="nome" value="Ex.André"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Sobrenome:</b></td>
-                        <td><input type="text" class="seletor" name="sobrenome" value="Ex.Silva"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Idade:</b></td>
-                        <td><input type="number" class="seletor" name="idade" maxlength="3"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Email:</b></td>
-                        <td><input type="email" class="seletor" name="email" value="Ex.seuNome@email.com.br"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Data Nascimento:</b></td>
-                        <td><input type="date" class="seletor" name="date_nasc"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Telefone:</b></td>
-                        <td><input type="number" class="seletor" name="tel" maxlength="8"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Envie uma foto do Motorista:</b></td>
-                        <td><input type="file" class="seletor" name="foto"></td>
-                    </tr>
-                    <tr>
-                        <td><b>CNH - n° de registro:</b></td>
-                        <td><input type="number" class="seletor" name="cnh" maxlength="20"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Data de emissão:</b></td>
-                        <td><input type="date" class="seletor" name="data_emis"></td>
-                    </tr>
-                    <tr>
-                        <td><b>Data de vencimento:</b></td>
-                        <td><input type="date" class="seletor" name="data_venc"></td>
-                    </tr>
-                </table>
-                <div id="btn_selct">
-                    <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
-                    <input type="reset" class="btn" name="btn-limpar" value="Limpar">
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="footer">
+    <main>
+        <article>
+            <section>
+                <h2>
+                <p>Campo para a inserção de novos Motorista.</p>
+            </h2>
+    
+            <hr>
+            </section>
+            <section>
+                <form action="LocFleet@una.com.br" method="GET">
+                    <table>
+                        <tr>
+                            <td><b>Nome:</b></td>
+                            <td><input type="text" class="seletor" name="nome" value="Ex.André"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Sobrenome:</b></td>
+                            <td><input type="text" class="seletor" name="sobrenome" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Idade:</b></td>
+                            <td><input type="number" class="seletor" name="idade" maxlength="3"></td>
+                        </tr>
+                        <tr>
+                            <td><b>CPF:</b></td>
+                            <td><input type="number" class="seletor" name="cpf" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>RG:</b></td>
+                            <td><input type="number" class="seletor" name="rg" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Email:</b></td>
+                            <td><input type="email" class="seletor" name="email" value="Ex.seuNome@email.com.br"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Data Nascimento:</b></td>
+                            <td><input type="date" class="seletor" name="date_nasc"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Telefone:</b></td>
+                            <td><input type="number" class="seletor" name="tel" maxlength="8"></td>
+                        </tr>
+                        <tr>
+                            <td><b>CNH - N° de registro:</b></td>
+                            <td><input type="number" class="seletor" name="cnh" maxlength="20"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Data de emissão:</b></td>
+                            <td><input type="date" class="seletor" name="data_emis"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Data de vencimento:</b></td>
+                            <td><input type="date" class="seletor" name="data_venc"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Endereço</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>Rua:</b></td>
+                            <td><input type="text" class="seletor" name="rua" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Número:</b></td>
+                            <td><input type="number" class="seletor" name="numero" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Cidade:</b></td>
+                            <td><input type="text" class="seletor" name="cidade" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Cep:</b></td>
+                            <td><input type="number" class="seletor" name="cep" value="Ex.Silva"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Envie uma foto do Motorista:</b></td>
+                            <td><input type="file" class="seletor" name="foto"></td>
+                        </tr>
+                    </table>
+                    <div id="btn_selct">
+                        <input type="submit" class="btn" name="btn-cadastrar" value="Cadastrar">
+                        <input type="reset" class="btn" name="btn-limpar" value="Limpar">
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer>
         <p>
         <h3>@LocFleet - Aproveite nossos Serviços</h3>
         </p>
-    </div>
+    </footer>
     
 </body>
 

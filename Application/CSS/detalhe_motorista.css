@@ -10,6 +10,7 @@
     font-family: sans-serif;
     line-height: 1.5;
 }
+
 main {
 
     position: relative;
@@ -22,30 +23,34 @@ main {
     border-radius: 10px;
     bottom: 20px;
 }
+#carro {
+    position: relative;
+    float: right;
+    width: 400px;
+    border-style: solid;
+    border-color: #0e0909;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
 table{
-    position:relative;
-    width: 100%;
-    margin: auto;
-    background: #313030d2;
-    border:3px solid black;
+    position: relative;
+    border: 2px solid black;
     border-collapse: collapse;
 }
-td{
-    text-align: center;
-    position: relative;
-    border-radius: 10px;
+th, td{
     border: 1px solid black;
 }
-.seletor{
+td{
+
+    text-align: justify;
     position: relative;
-    height: 20px;
-    width: 300px;
-    margin: 3%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 #btn_selct {
 
     position: relative;
-    left: 86.8%;
     width: 200px;
 
 }
@@ -58,7 +63,7 @@ td{
     color: #ffffff;
     background: #111010c4;
     margin-top: 3%;
-    margin-right: 1%;
+    margin-right: 20px;
 
 }
 @media (max-width: 800px){
