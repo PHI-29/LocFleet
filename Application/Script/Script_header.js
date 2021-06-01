@@ -3,11 +3,11 @@ function redireciona_home(){
     window.location.href = "index.html";
 }
 function redireciona_perfil(){
-    window.location.href = "index.html";
+    window.location.href = "login.html";
 }
 
 function redireciona_frota(){
-    window.location.href = "veiculos.html";
+    window.location.href = "frota.html";
 }
 
 function redireciona_motorista(){

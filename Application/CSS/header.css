@@ -13,7 +13,7 @@ nav {
     align-items: center;
 }
 
-p {
+li p {
     color: #FFF;
     font-weight:bold ;
 }
@@ -96,12 +96,13 @@ nav,
 }
 
 footer{
-
     position: absolute ;
     background-color: #111;
-    color: #FFF;
-    left: 0%;
     height: 60px;
     width: 100%;
-
+}
+footer h3{
+    color: #797979;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
 }
