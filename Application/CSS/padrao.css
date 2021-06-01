@@ -1,6 +1,17 @@
   /**CSS Document**/
 
-section {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    border: none;
+}
+body {
+    background: url(imagens/plano-de-fundo.jpg);
+}
+main {
 
     position: relative;
     width: 97%;
@@ -13,14 +24,9 @@ section {
     border-radius: 10px;
     transition: all .5s;
 }
-.band-name{
-    text-align: center;
-}
-.headline{
-    text-align: center;
-}
-@media (max-width: 8px){
-    section {
+
+@media (max-width: 800px){
+    main {
         position: relative;
         width: 90%;
         margin-left: auto ;

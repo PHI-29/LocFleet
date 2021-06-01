@@ -1,29 +1,5 @@
   /**CSS Document**/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFF;
-    border: none;
-}
-body {
-    background: url(imagens/plano-de-fundo.jpg);
-}
-main {
-
-    position: relative;
-    width: 97%;
-    margin-left: auto ;
-    margin-right: auto;
-    background: #313030d2;
-    padding:  40px;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-    border-radius: 10px;
-    transition: all .5s;
-}
 input{
     border:none;
     border-radius: 2px;
@@ -80,17 +56,4 @@ a:visited {
 }
   a:active {
     color: red;
-}
-@media (max-width: 800px){
-    main {
-        position: relative;
-        width: 90%;
-        margin-left: auto ;
-        margin-right: auto;
-        background: #313030d2;
-        padding:  30px;
-        margin-top: 3.5rem;
-        margin-bottom: 3.5rem;
-        border-radius: 5px;
-    }
 }

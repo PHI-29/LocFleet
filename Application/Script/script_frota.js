@@ -3,7 +3,7 @@ window.onload = function(){
 }
 
 function add_veiculo(){
-    window.location.href="cadt_veiculo.html";
+    window.location.href="cadt_frota.html";
 }
 
 async function cadastrar_dados(){
@@ -25,7 +25,7 @@ async function cadastrar_dados(){
         placa.innerHTML = veiculos.placa;
         ultimo_condutor.innerHTML = veiculos.condutor_atual;
         detalhes_veiculos.innerHTML = 
-        '<a href="detalhe_veículo.html?id='+veiculos.id+'"><button class="btn_tab">Detalhes</button></a>';
+        '<a href="detalhe_frota.html?id='+veiculos.id+'"><button class="btn_tab">Detalhes</button></a>';
        
     });
 }

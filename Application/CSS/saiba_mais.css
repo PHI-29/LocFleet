@@ -1,28 +1,5 @@
   /**CSS Document**/
 
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFF;
-    border: none;
-}
-body {
-    background: url(imagens/plano-de-fundo.jpg);
-}
-main {
-
-    position: relative;
-    width: 95%;
-    max-width: 90%;
-    margin: auto ;
-    background: #313030d2;
-    padding:  40px;
-    margin-top: 30px;
-    border-radius: 10px;
-    bottom: 20px;
-}
 table{
     
     position:relative;
