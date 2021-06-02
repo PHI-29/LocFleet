@@ -13,6 +13,11 @@ section {
     border-radius: 10px;
     transition: all .5s;
 }
+.section_red:hover{
+    background-color: #292929ef;
+    cursor: pointer;
+    transition: .3s;
+}
 .band-name{
     text-align: center;
 }

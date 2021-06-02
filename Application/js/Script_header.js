@@ -25,3 +25,7 @@ function redireciona_financeiro(){
 function redireciona_mais(){
     window.location.href = "saiba_mais.html";
 }
+
+function redireciona_cadastro(){
+    window.location.href = "cadastro_usuario.html";
+}
