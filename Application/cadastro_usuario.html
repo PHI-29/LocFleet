@@ -83,6 +83,29 @@
                       </div>
 
                       <div class="half-box spacing">
+                        <label for="name">Data Nascimento</label>
+                        <input type="date" name="dtNascimento" id="dtNascimento" placeholder="Informe sua data de nascimento" 
+                        >
+                      </div>
+
+                      <div class="half-box">
+                        <label for="lastname">CPF</label>
+                        <input type="text" onblur="formataCPF(this)" pattern="[0-9]{11}" placeholder="Digite o seu CPF" 
+                        maxlength="11" data-min-length="11" data-required>
+                      </div>
+
+                      <div class="half-box spacing">
+                        <label for="lastname">Telefone</label>
+                        <input type="tel" onblur="formataTEL(this)" pattern="[0-9]{10}"  placeholder="Digite o seu Telefone" 
+                        maxlength="10">
+                      </div>
+                      <div class="half-box">
+                        <label for="lastname">Celular</label>
+                        <input type="tel" onblur="formataCEL(this)" pattern="[0-9]{11}"  placeholder="Digite o seu Celular" 
+                        maxlength="11">
+                      </div>
+
+                      <div class="half-box spacing">
                         <label for="password">Senha</label>
                         <input type="password" name="password" id="password" placeholder="Digite a sua senha" 
                         data-min-length="7" data-max-length="20" data-required data-password-validate>
