@@ -1,52 +1,107 @@
-  /**CSS Document**/
+/**CSS Document**/
+
+input, label{
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+input:focus, label:focus{
+    outline: none;
+}
+
+a{
+    color: #0c6baf;
+}
+a:hover{
+    color: #094e80;
+    transition: .3s;
+}
+
+main{
+    padding-top: 5vh;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+main h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.7rem;
+
+}
+
+main h4{
+    color: rgb(138, 136, 136);
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.full-box{
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.half-box{
+    flex: 1 1 45%;
+    position: relative;
+}
+
+
+.spacing{
+    margin-right: 2.5%;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
 
 input{
-    border-bottom: 2px solid #323232;
+    border-bottom: 2px solid #000;
     padding: 10px;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: black;
+    font-size: .9rem;
+    margin-bottom: 40px;
 }
 input:focus{
-    outline: none;
+    border-color: #0c6baf;
+}
 
-}
-table{
-    position:relative;
-    width: 100%;
-    margin: auto;
-    background: #313030d2;
-    border:3px solid black;
-    border-collapse: collapse;
-}
-td{
-    text-align: center;
-    position: relative;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-.seletor{
-    position: relative;
-    height: 20px;
-    width: 300px;
-    margin: 3%;
-}
-#btn_selct {
-
-    position: relative;
-    left: 86.8%;
-    width: 200px;
-
-}
-.btn {
-
-    position: relative;
-    border-radius: 5px;
+input[type="submit"]{
+    background-color: #0c6baf;
+    color: white;
     border: none;
-    padding: 15px;
-    color: #ffffff;
-    background: #111010c4;
-    margin-top: 3%;
-    margin-right: 1%;
+    border-radius: 40px;
+    height: 40px;
+    cursor: pointer;
+}
 
+#agreement{
+    margin-right: 5px;
+}
+
+#agreement, #agreement-label{
+    display: inline-block;
+    width: auto;
+}
+
+/* validações */
+
+.error-validation{
+    color: #FF1A1A;
+    position: absolute;
+    top:57px;
+    font-size: .8rem;
+}
+
+.tamplate{
+    display: none;
 }
