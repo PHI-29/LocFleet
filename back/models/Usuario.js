@@ -3,20 +3,10 @@ module.exports = (sequelize, Sequelize) => {
         nome: Sequelize.STRING,
         email: Sequelize.STRING
     });
-    Usuario.associate = (models) =>{
-        Usuario.hasMany(models.Veiculo,{
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Veiculo, {
             foreignKey: 'UsuarioId'
         });
     };
     return Usuario;
 };
-
-
-
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@ const { Usuario, Veiculo, Motor } = require('../models/');
 
 class UsuarioController {
 
-    async getAllV(req, res) {
+    async getAll(req, res) {
         try {
             const Usuarios_resultado = await Usuario.findAll({
                 include:{

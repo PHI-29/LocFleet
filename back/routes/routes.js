@@ -1,20 +1,17 @@
 const { Router } = require('express');
-const VeiculoController = require('../controllers/veiculoController');
-const UsuarioController = require('../controllers/usuarioController');
-const MotorController = require('../controllers/motorController');
+const usuarioRouter = require('./usuario');
+const veiculoRouter = require('./veiculo');
+const motoristaRouter = require('./motorista');
 const routes = Router();
 
 routes.get('/', (req, res) => {
     res.status(200).send({ mensagem: "Hello World" });
 })
 
-routes.get('/usuarios', UsuarioController.getAllV)
-routes.post('/usuario', UsuarioController.create)
+routes.use('/usuario', usuarioRouter);
 
-routes.get('/veiculos', VeiculoController.getAll)
-routes.post('/veiculo', VeiculoController.create)
+routes.use('/veiculo', veiculoRouter);
 
-routes.get('/motoristas', MotorController.getAll)
-routes.post('/motorista', MotorController.create)
+routes.use('/motorista', motoristaRouter);
 
 module.exports = routes;
