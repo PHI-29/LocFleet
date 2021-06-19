@@ -1,0 +1,39 @@
+  /**CSS Document**/
+
+section {
+
+    position: relative;
+    width: 97%;
+    margin-left: auto ;
+    margin-right: auto;
+    background: #313030d2;
+    padding:  40px;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    border-radius: 10px;
+    transition: all .5s;
+}
+.section_red:hover{
+    background-color: #292929ef;
+    cursor: pointer;
+    transition: .3s;
+}
+.band-name{
+    text-align: center;
+}
+.headline{
+    text-align: center;
+}
+@media (max-width: 8px){
+    section {
+        position: relative;
+        width: 90%;
+        margin-left: auto ;
+        margin-right: auto;
+        background: #313030d2;
+        padding:  30px;
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+        border-radius: 5px;
+    }
+}
