@@ -1,3 +1,5 @@
+/* global fetch*/
+
 class Validator {
 
     constructor() {
@@ -159,7 +161,6 @@ class Validator {
 
         // Quantidade de erros 
         let errosQty = input.parentNode.querySelector('.error-validation');
-
         if (errosQty === null) {
             let tamplate = document.querySelector('.error-validation').cloneNode(true);
 
@@ -170,69 +171,106 @@ class Validator {
             tamplate.classList.remove('tamplate');
 
             inputParent.appendChild(tamplate);
+
+            //desvalidar o envio do formulario
+            g = 1;
         }
-
-
     }
 
     // Limpa as validações da tela
     limpar_validations(validation) {
         validation.forEach(el => el.remove());
     }
-
 }
 
-function formataCPF(cpf) {
-    const elementoAlvo = cpf
-    const cpfAtual = cpf.value   
-    
-    let cpfAtualizado;
-    
-    cpfAtualizado = cpfAtual.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, 
-     function( regex, argumento1, argumento2, argumento3, argumento4 ) {
-            return argumento1 + '.' + argumento2 + '.' + argumento3 + '-' + argumento4;
-    })  
-    elementoAlvo.value = cpfAtualizado; 
-    }   
-
-    function formataCEL(cel) {
-        const elementoAlvo = cel
-        const celAtual = cel.value   
-        
-        let celAtualizado;
-        
-        celAtualizado = celAtual.replace(/(\d{2})(\d{5})(\d{4})/, 
-         function( regex, argumento1, argumento2, argumento3 ) {
-                return '(' + argumento1 +')' + argumento2 + '-' + argumento3 ;
-        })  
-        elementoAlvo.value = celAtualizado; 
-    }  
-
-    function formataTEL(tel) {
-        const elementoAlvo = tel
-        const telAtual = tel.value   
-        
-        let telAtualizado;
-        
-        telAtualizado = telAtual.replace(/(\d{2})(\d{4})(\d{4})/, 
-            function( regex, argumento1, argumento2, argumento3 ) {
-                return '(' + argumento1 +')' + argumento2 + '-' + argumento3 ;
-        })  
-        elementoAlvo.value = telAtualizado; 
-    }  
-    
-window.onload = function () {
+// Variavel que confirma se pode mandar o formulario
+let g = 0;
+window.onload = () => {
     let form = document.getElementById("register-form");
     let submit = document.getElementById("btn_submit");
 
     let validator = new Validator();
 
-    // Evento para disparar validações
+    //Evento para disparar validações
     submit.addEventListener('click', function (e) {
 
         // O formulario deixa de funcionar da forma que devia.
         e.preventDefault();
 
         validator.validate(form);
+
+        getDados(g)
+        //validar o envio do formulario
+        g = 0
     });
+}
+
+
+//Pegar os dados do formulario
+function getDados(g) {
+    if (g === 0) {
+        let email_dados = document.querySelector('#email')
+        let nome_dados = document.querySelector('#name')
+        let sobrenome_dados = document.querySelector('#lastname')
+        let dtNascimento_dados = document.querySelector('#dtNascimento')
+        let cpf_dados = document.querySelector('#cpf')
+        let telefone_dados = document.querySelector('#tel')
+        let celular_dados = document.querySelector('#cel')
+        let senha_dados = document.querySelector('#password')
+        const usuario = {
+            email: email_dados.value,
+            nome: nome_dados.value,
+            sobrenome: sobrenome_dados.value,
+            dtNascimento: dtNascimento_dados.value,
+            cpf: cpf_dados.value,
+            telefone: telefone_dados.value,
+            celular: celular_dados.value,
+            senha: senha_dados.value
+        }
+        return enviar_dados(usuario)
+
+    }
+    else {
+        console.log("Não pegou os dados")
+    }
+
+}
+
+//Envia os dados do formulario para a api
+async function enviar_dados(usuario) {
+    const url = 'http://localhost:3000/usuario/add'
+
+    let fetchData = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+    }
+
+    fetch(url, fetchData)
+        .then(res => res.json())
+        .then(resp => console.log(resp))
+
+    limpar_campos()
+
+    window.location.href = 'login.html'
+}
+
+//Limpa os campos de texto
+function limpar_campos() {
+    document.querySelector('#email').value = '';
+    document.querySelector('#name').value = '';
+    document.querySelector('#lastname').value = '';
+    document.querySelector('#dtNascimento').value = '';
+    document.querySelector('#cpf').value = '';
+    document.querySelector('#tel').value = '';
+    document.querySelector('#cel').value = '';
+    document.querySelector('#password').value = '';
+    document.querySelector('#passConfirmation').value = '';
+
+    //atribui tempo até o servidor coletar todos os dados
+    for (let i = 0; i < 25000; i++) {
+    }
 }

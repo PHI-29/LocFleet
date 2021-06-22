@@ -78,34 +78,33 @@
                         <input type="text" name="name" id="name" placeholder="Digite o seu nome" data-min-length="3"
                             data-max-length="16" data-required data-somente-letras>
                     </div>
-
+                    
                     <div class="half-box">
                         <label for="lastname">Sobrenome</label>
                         <input type="text" name="lastname" id="lastname" placeholder="Digite o seu sobrenome"
                             data-min-length="3" data-max-length="16" data-required data-somente-letras>
                     </div>
-
+                
                     <div class="half-box spacing">
-                        <label for="name">Data Nascimento</label>
-                        <input type="date" name="dtNascimento" id="dtNascimento"
-                            placeholder="Informe sua data de nascimento">
+                        <label for="dtNascimento">Data Nascimento</label>
+                        <input type="date" name="dtNascimento" id="dtNascimento" data-required>
                     </div>
 
                     <div class="half-box">
-                        <label for="lastname">CPF</label>
-                        <input type="text" onblur="formataCPF(this)" pattern="[0-9]{11}" placeholder="Digite o seu CPF"
-                            maxlength="11" data-min-length="11" data-required>
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" 
+                        placeholder="Digite o seu CPF" maxlength="11" data-min-length="11" data-required>
                     </div>
 
                     <div class="half-box spacing">
-                        <label for="lastname">Telefone</label>
-                        <input type="tel" onblur="formataTEL(this)" pattern="[0-9]{10}"
-                            placeholder="Digite o seu Telefone" maxlength="10">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" name="tel" id="tel"  pattern="[0-9]{11}"
+                            placeholder="Digite o seu Telefone" maxlength="10" data-required>
                     </div>
                     <div class="half-box">
-                        <label for="lastname">Celular</label>
-                        <input type="tel" onblur="formataCEL(this)" pattern="[0-9]{11}"
-                            placeholder="Digite o seu Celular" maxlength="11">
+                        <label for="cel">Celular</label>
+                        <input type="tel" name="cel" id="cel"  pattern="[0-9]{11}"
+                            placeholder="Digite o seu Celular" maxlength="11" data-required>
                     </div>
 
                     <div class="half-box spacing">
@@ -123,8 +122,7 @@
 
                     <div class="full-box">
                         <input type="checkbox" name="agreement" id="agreement">
-                        <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de
-                                uso</a></label>
+                        <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
                     </div>
 
                     <div class="full-box">

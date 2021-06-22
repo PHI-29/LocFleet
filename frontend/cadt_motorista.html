@@ -96,18 +96,18 @@
 
           <div class="half-box">
             <label for="cpf">CPF</label>
-            <input type="text" onblur="formataCPF(this)" pattern="[0-9]{11}" placeholder="Digite o seu CPF"
+            <input type="text"  placeholder="Digite o seu CPF"
               maxlength="11" data-min-length="11" data-required>
           </div>
 
           <div class="half-box spacing">
             <label for="telefone">Telefone</label>
-            <input type="tel" onblur="formataTEL(this)" pattern="[0-9]{10}" placeholder="Digite o seu Telefone"
+            <input type="number"  placeholder="Digite o seu Telefone"
               maxlength="10">
           </div>
           <div class="half-box">
             <label for="celular">Celular</label>
-            <input type="tel" onblur="formataCEL(this)" pattern="[0-9]{11}" placeholder="Digite o seu Celular"
+            <input type="number"  placeholder="Digite o seu Celular"
               maxlength="11">
           </div>
 
@@ -186,6 +186,7 @@
             <label for="cidade">Cidade</label>
             <input type="text" placeholder="Informe a Cidade">
           </div>
+          
           <div class="full-box">
             <input type="submit" id="btn_submit" value="Registrar">
           </div>

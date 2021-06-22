@@ -9,15 +9,11 @@ module.exports = {
         autoIncrement: true,
         type:Sequelize.INTEGER
       },
-      nome:{
-        allowNull: false,
-        type:Sequelize.STRING
-      },
       email:{
         allowNull: false,
         type:Sequelize.STRING
-      },/* 
-      senha:{
+      },
+      nome:{
         allowNull: false,
         type:Sequelize.STRING
       },
@@ -25,18 +21,26 @@ module.exports = {
         allowNull: false,
         type:Sequelize.STRING
       },
-      idade:{
+      dtNascimento:{
         allowNull: false,
-        type:Sequelize.INTEGER
+        type:Sequelize.DATE
       },
-      cidade:{
+      cpf:{
+        allowNull: false,
+        type:Sequelize.BIGINT
+      },
+      telefone:{
+        allowNull: false,
+        type:Sequelize.BIGINT
+      },
+      celular:{
+        allowNull: false,
+        type:Sequelize.BIGINT
+      },
+      senha:{
         allowNull: false,
         type:Sequelize.STRING
       },
-      numero:{
-        allowNull: false,
-        type:Sequelize.INTEGER
-      }, */
       createdAt:{
         allowNull: false,
         type:Sequelize.DATE
