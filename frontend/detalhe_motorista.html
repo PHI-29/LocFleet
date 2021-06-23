@@ -60,127 +60,94 @@
 
     <!-- Corpo do arquivo-->
     <main>
-        <article id="body">
+        <article >
             <section>
-                <h2>
-                    <p>Visualize as informações do Motorista.</p>
-                </h2>
+                <h2>Visualize as informações do Motorista.</h2>
 
                 <hr>
 
             </section>
 
-            <section>
-                <img>
+            <section class="sec">
+                
+        
+                  <div class="half-box spacing">
+                    <label for="nome">Nome</label>
+        
+                    <p name="nome" id="nome"></p>
+                  </div>
+        
+                  <div class="half-box">
+                    <label for="lastname">Sobrenome</label>
+        
+                    <p name="lastname" id="lastname"></p>
+                  </div>
+
+                  <div class="full-box">
+                    <label for="email">E-mail</label>
+                    <p name="email" id="email"></p>
+                  </div>
+
+                  <div class="half-box spacing">
+                    <label for="dtNascimento">Data de Nascimento</label>
+        
+                    <p name=dtNascimento" id="dtNascimento"></p>
+                  </div>
+        
+                  <div class="half-box">
+                    <label for="cpf">CPF</label>
+        
+                    <p name="cpf" id="cpf"></p>
+                  </div>
+
+                  <div class="half-box spacing">
+                    <label for="tel">Telefone</label>
+        
+                    <p name="tel" id="tel"></p>
+                  </div>
+        
+                  <div class="half-box">
+                    <label for="cel">Celular</label>
+        
+                    <p name="cel" id="cel"></p>
+                  </div>
+
+                  <div class="half-box spacing">
+                    <label for="dtEmissao">Data de Emissão</label>
+        
+                    <p name="dtEmissao" id="dtEmissao"></p>
+                  </div>
+
+                  <div class="half-box">
+                    <label for="dtvencimento">Data de Vencimento</label>
+        
+                    <p name="dtvencimento" id="dtvencimento"></p>
+                  </div>
+
+                  <div class="half-box spacing">
+                    <label for="numCNH">CNH</label>
+        
+                    <p name="numCNH" id="numCNH"></p>
+                  </div>
+        
+                  <div class="half-box">
+                    <label for="cep">CEP</label>
+        
+                    <p name="cep" id="cep"></p>
+                  </div>
+
+                  <div class="half-box spacing">
+                    <label for="placa_at">Placa Atual</label>
+        
+                    <p name="placa_at" id="placa_at"></p>
+                  </div>
             </section>
 
-            <section>
-                <table>
-                    <tr>
-                        <th>Nome:</th>
-                        <td>
-                            <p class="td" id="m_nome"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Sobrenome:</th>
-                        <td>
-                            <p class="td" id="m_sobrenome"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Idade:</th>
-                        <td>
-                            <p class="td" id="m_idade"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>CPF:</th>
-                        <td>
-                            <p class="td" id="m_cpf"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>RG</th>
-                        <td>
-                            <p class="td" id="m_rg"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>EMAIL</th>
-                        <td>
-                            <p class="td" id="m_email"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Data de Nascimento</th>
-                        <td>
-                            <p class="td" id="m_data_nascimento"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Telefone</th>
-                        <td>
-                            <p class="td" id="m_telefone"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>CNH</th>
-                        <td>
-                            <p class="td" id="m_cnh"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Data de Emissão</th>
-                        <td>
-                            <p class="td" id="m_data_em"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Data de Vencimento</th>
-                        <td>
-                            <p class="td" id="m_data_venc"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Placa Atual</th>
-                        <td>
-                            <p class="td" id="m_placa_at"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Endereço</th>
-                    </tr>
-                    <tr>
-                        <th>Rua</th>
-                        <td>
-                            <p class="td" id="m_rua"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Número</th>
-                        <td>
-                            <p class="td" id="m_numero"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Cidade</th>
-                        <td>
-                            <p class="td" id="m_cidade"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>CEP</th>
-                        <td>
-                            <p class="td" id="m_cep"></p>
-                        </td>
-                    </tr>
-                </table>
-            </section>
             <section id="btn_selct">
-                <input type="submit" class="btn" name="Mot_veiculo" value="Verificar Motorista do Veículo">
+                <input type="submit" class="btn" name="Mot_veiculo" value="Verificar veículo do motorista">
                 <input type="submit" class="btn" name="alteracoes" value="Remover Veículo">
             </section>
+            
         </article>
     </main>
 

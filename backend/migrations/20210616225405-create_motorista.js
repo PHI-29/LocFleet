@@ -2,41 +2,57 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Motors', { 
+    await queryInterface.createTable('Motors', {
       id: {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-        type:Sequelize.INTEGER
+        type: Sequelize.INTEGER
       },
-      nome:{
+      email: {
         allowNull: false,
-        type:Sequelize.STRING
-      },/* 
-      sobrenome:{
-        allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.STRING
       },
-      email:{
+      nome: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.STRING
       },
-      idade:{
+      sobrenome: {
         allowNull: false,
-        type:Sequelize.INTEGER
+        type: Sequelize.STRING
       },
-      cidade:{
+      dtNascimento: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.DATE
       },
-      numero:{
+      cpf: {
         allowNull: false,
-        type:Sequelize.INTEGER
+        type: Sequelize.BIGINT
       },
-      cnh:{
+      tel: {
+        allowNull: true,
+        type: Sequelize.BIGINT
+      },
+      cel: {
         allowNull: false,
-        type:Sequelize.INTEGER
-      }, */
+        type: Sequelize.BIGINT
+      },
+      dtEmissao: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      dtvencimento: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      numCNH: {
+        allowNull: false,
+        type: Sequelize.BIGINT
+      },
+      cep: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       VeiculoId: {
         allowNull: true,
         type: Sequelize.INTEGER,
@@ -48,13 +64,13 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      createdAt:{
+      createdAt: {
         allowNull: false,
-        type:Sequelize.DATE
+        type: Sequelize.DATE
       },
-      updatedAt:{
+      updatedAt: {
         allowNull: false,
-        type:Sequelize.DATE
+        type: Sequelize.DATE
       }
     });
   },

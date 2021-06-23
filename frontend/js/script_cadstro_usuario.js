@@ -11,6 +11,7 @@ class Validator {
             'data-somente-letras',
             'data-equal',
             'data-password-validate',
+            'data-maior-idade'
         ]
     }
 
@@ -87,6 +88,21 @@ class Validator {
             let mensagem_error = `Este campo é obrigatório`;
 
             this.imprimirMensagem(input, mensagem_error);
+        }
+    }
+
+    //valida idade
+    maioridade(input) {
+        let dataInput = new Date(input.value)
+        if (!isNaN(dataInput)) {
+            let dataAtual = new Date();
+            let diferença = dataAtual.getFullYear() - dataInput.getFullYear()
+
+            if (diferença < 18) {
+                let mensagem_error = `O usuario não pode ser menor de idade`;
+
+                this.imprimirMensagem(input, mensagem_error);
+            }
         }
     }
 

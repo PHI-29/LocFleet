@@ -30,7 +30,7 @@ module.exports = {
         type:Sequelize.BIGINT
       },
       telefone:{
-        allowNull: false,
+        allowNull: true,
         type:Sequelize.BIGINT
       },
       celular:{
