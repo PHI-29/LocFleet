@@ -5,9 +5,7 @@ class Validator {
             'data-required',
             'data-min-length',
             'data-max-length',
-            'data-email-validate',
             'data-somente-letras',
-            'data-maior-idade'
         ]
     }
 
@@ -87,39 +85,10 @@ class Validator {
         }
     }
 
-    //valida idade
-    maioridade(input) {
-        let dataInput = new Date(input.value)
-        if (!isNaN(dataInput)) {
-            let dataAtual = new Date();
-            let diferença = dataAtual.getFullYear() - dataInput.getFullYear()
-
-            if (diferença < 18) {
-                let mensagem_error = `O motorista não pode ser menor de idade`;
-
-                this.imprimirMensagem(input, mensagem_error);
-            }
-        }
-    }
-
-    // Valida emails
-    emailvalidate(input) {
-
-        let re = /\S+@\S+\.\S+/;
-
-        let email = input.value;
-
-        let mensagem_error = `Insira um e-mail no padrão seuemail@email.com`;
-
-        if (!re.test(email)) {
-            this.imprimirMensagem(input, mensagem_error);
-        }
-    }
-
     // Validar somente letras no campo de texto
     somenteletras(input) {
 
-        let re = /^[A-Za-z]+$/;
+        let re = /^[A-Z a-z]+$/;
 
         let inputValue = input.value;
 
@@ -184,32 +153,30 @@ window.onload = () => {
 //Pegar os dados do formulario
 function getDados(g) {
     if (g === 0) {
-        let email_dados = document.querySelector('#email')
-        let nome_dados = document.querySelector('#nome')
-        let sobrenome_dados = document.querySelector('#lastname')
-        let dtNascimento_dados = document.querySelector('#dtNascimento')
-        let cpf_dados = document.querySelector('#cpf')
-        let telefone_dados = document.querySelector('#tel')
-        let celular_dados = document.querySelector('#cel')
-        let dtEmissao_dados = document.querySelector('#dtEmissao')
-        let dtvencimento_dados = document.querySelector('#dtvencimento')
-        let numCNH_dados = document.querySelector('#numCNH')
-        let cep_dados = document.querySelector('#cep')
+        let modelo_dados = document.querySelector('#modelo')
+        let marca_dados = document.querySelector('#marca')
+        let ano_dados = document.querySelector('#ano')
+        let placa_dados = document.querySelector('#placa')
+        let renavam_dados = document.querySelector('#renavam')
+        let cor_dados = document.querySelector('#cor')
+        let km_dados = document.querySelector('#km')
+        let ulRevisao_dados = document.querySelector('#ulRevisao')
+        let loc_dados = document.querySelector('#loc')
+        let valor_dados = document.querySelector('#valor')
 
-        const motorista = {
-            email: email_dados.value,
-            nome: nome_dados.value,
-            sobrenome: sobrenome_dados.value,
-            dtNascimento: dtNascimento_dados.value,
-            cpf: cpf_dados.value,
-            tel: telefone_dados.value,
-            cel: celular_dados.value,
-            dtEmissao: dtEmissao_dados.value,
-            dtvencimento: dtvencimento_dados.value,
-            numCNH: numCNH_dados.value,
-            cep: cep_dados.value,
+        const veiculo = {
+            modelo: modelo_dados.value,
+            marca: marca_dados.value,
+            ano: ano_dados.value,
+            placa: placa_dados.value,
+            renavam: renavam_dados.value,
+            cor: cor_dados.value,
+            km: km_dados.value,
+            ulRevisao: ulRevisao_dados.value,
+            loc: loc_dados.value,
+            valor: valor_dados.value
         }
-        return enviar_dados(motorista)
+        return enviar_dados(veiculo)
 
     }
     else {
@@ -219,8 +186,8 @@ function getDados(g) {
 }
 
 //Envia os dados do formulario para a api
-async function enviar_dados(motorista) {
-    const url = 'http://localhost:3000/motorista/add'
+async function enviar_dados(veiculo) {
+    const url = 'http://localhost:3000/veiculo/add'
 
     let fetchData = {
         method: 'POST',
@@ -228,7 +195,7 @@ async function enviar_dados(motorista) {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(motorista)
+        body: JSON.stringify(veiculo)
     }
 
     fetch(url, fetchData)
@@ -237,22 +204,21 @@ async function enviar_dados(motorista) {
 
     limpar_campos()
 
-    window.location.href = 'motorista.html'
+    window.location.href = 'frota.html'
 }
 
 //Limpa os campos de texto
 function limpar_campos() {
-    document.querySelector('#email').value = '';
-    document.querySelector('#nome').value = '';
-    document.querySelector('#lastname').value = '';
-    document.querySelector('#dtNascimento').value = '';
-    document.querySelector('#cpf').value = '';
-    document.querySelector('#tel').value = '';
-    document.querySelector('#cel').value = '';
-    document.querySelector('#dtEmissao').value = '';
-    document.querySelector('#dtvencimento').value = '';
-    document.querySelector('#numCNH').value = '';
-    document.querySelector('#cep').value = '';
+    document.querySelector('#modelo')
+    document.querySelector('#marca')
+    document.querySelector('#ano')
+    document.querySelector('#placa')
+    document.querySelector('#renavam')
+    document.querySelector('#cor')
+    document.querySelector('#km')
+    document.querySelector('#ulRevisao')
+    document.querySelector('#loc')
+    document.querySelector('#valor')
 
     //atribui tempo até o servidor coletar todos os dados
     for (let i = 0; i < 30000; i++) {

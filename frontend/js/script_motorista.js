@@ -19,11 +19,20 @@ async function cadastrar_dados(){
         let celular = linha.insertCell(2);
         let placa_atual = linha.insertCell(3);
         let detalhes_motorista = linha.insertCell(4)
+        
+        let resposta;
+        console.log(motorista.Veiculo)
+        if(!motorista.Veiculo){
+            resposta ='<b style="color:#e82121">Sem veículo</b>';
+        }
+        else{
+           resposta = JSON.stringify(motorista.Veiculo.placa)
+        }
 
         nome.innerHTML = motorista.nome;
         email.innerHTML = motorista.email;
         celular.innerHTML = motorista.cel;
-        placa_atual.innerHTML = motorista.placa_atual;
+        placa_atual.innerHTML = resposta;
         detalhes_motorista.innerHTML = 
         '<a href="detalhe_motorista.html?id='+motorista.id+'"><button class="btn_tab">Detalhes</button></a>';
         

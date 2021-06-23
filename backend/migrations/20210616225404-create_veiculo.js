@@ -9,42 +9,46 @@ module.exports = {
         autoIncrement: true,
         type: Sequelize.INTEGER
       },
+      modelo: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      marca: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      ano: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       placa: {
         allowNull: false,
         type: Sequelize.STRING
-      },/* 
-      nome:{
-        allowNull: false,
-        type:Sequelize.STRING
       },
-      modelo:{
+      renavam: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.BIGINT
       },
-      marca:{
+      cor: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.STRING
       },
-      ano:{
+      km: {
         allowNull: false,
-        type:Sequelize.INTEGER
+        type: Sequelize.INTEGER
       },
-      cor:{
+      ulRevisao: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.STRING
       },
-      km:{
+      loc: {
         allowNull: false,
-        type:Sequelize.INTEGER
+        type: Sequelize.STRING
       },
-      localizacao:{
+      valor: {
         allowNull: false,
-        type:Sequelize.STRING
+        type: Sequelize.STRING
       },
-      valor:{
-        allowNull: false,
-        type:Sequelize.INTEGER
-      }, */
       UsuarioId: {
         allowNull: true,
         type: Sequelize.INTEGER,

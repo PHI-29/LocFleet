@@ -287,6 +287,6 @@ function limpar_campos() {
     document.querySelector('#passConfirmation').value = '';
 
     //atribui tempo até o servidor coletar todos os dados
-    for (let i = 0; i < 25000; i++) {
+    for (let i = 0; i < 30000; i++) {
     }
 }

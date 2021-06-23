@@ -27,7 +27,6 @@ class VeiculoController {
                     model:Motor
                 }
             });
-            console.log(Veiculos_resultado)
             return res.status(200).json(Veiculos_resultado);
         }
         catch (err) {
@@ -39,18 +38,46 @@ class VeiculoController {
     //Post para criar um veículo.
     async create(req, res) {
         try {
-            let usuario_cod = await Usuario.findByPk(req.body.UsuarioId);
+            
+            let usuario_id = await Usuario.findByPk(req.body.UsuarioId);
 
-            if (!usuario_cod) throw new Error("Usuario não encontrado");
-
-            else {
-                let veiculo_pegar = {
+            let veiculo_pegar
+            
+            if (usuario_id){
+                veiculo_pegar = {
+                    modelo: req.body.modelo,
+                    marca: req.body.marca,
+                    ano: req.body.ano,
                     placa: req.body.placa,
+                    renavam: req.body.renavam,
+                    cor: req.body.cor,
+                    km: req.body.km,
+                    ulRevisao: req.body.ulRevisao,
+                    loc: req.body.loc,
+                    valor: req.body.valor,
                     UsuarioId: usuario_cod['dataValues']['id']
                 }
-                const Veiculo_resultado = await Veiculo.create(veiculo_pegar);
-                return res.status(200).json(Veiculo_resultado);
+                
             }
+            else{
+                veiculo_pegar = {
+                    modelo: req.body.modelo,
+                    marca: req.body.marca,
+                    ano: req.body.ano,
+                    placa: req.body.placa,
+                    renavam: req.body.renavam,
+                    cor: req.body.cor,
+                    km: req.body.km,
+                    ulRevisao: req.body.ulRevisao,
+                    loc: req.body.loc,
+                    valor: req.body.valor,
+                }
+                console.log('aqui')
+            }
+            console.log(veiculo_pegar)
+            const Veiculo_resultado = await Veiculo.create(veiculo_pegar);
+                return res.status(200).json(Veiculo_resultado);
+            
         }
         catch (err) {
             return res.status(400).json({ error: err});

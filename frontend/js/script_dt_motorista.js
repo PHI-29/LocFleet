@@ -11,11 +11,11 @@ async function preencher_dados(){
     let dados = await req.json();
 
     let resposta;
-        if(!dados.VeiculoId){
-            resposta ='<b style="color:#e82121">Não está conduzindo veículo atualmente</b>';
+        if(!dados.Veiculo){
+            resposta ='<b style="color:#e82121">Não possui um veículo atribuido</b>';
         }
         else{
-           resposta = JSON.stringify(dados.VeiculoId.placa)
+           resposta = JSON.stringify(dados.Veiculo.placa)
         }
 
     document.querySelector('#email').innerHTML = dados.email
