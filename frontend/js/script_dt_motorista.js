@@ -15,7 +15,7 @@ async function preencher_dados(){
             resposta ='<b style="color:#e82121">Não possui um veículo atribuido</b>';
         }
         else{
-           resposta = JSON.stringify(dados.Veiculo.placa)
+           resposta = dados.Veiculo.placa
         }
 
     document.querySelector('#email').innerHTML = dados.email

@@ -1,4 +1,6 @@
 const { Veiculo, Usuario, Motor } = require('../models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op
 
 class VeiculoController {
 
@@ -19,6 +21,8 @@ class VeiculoController {
     }
 
 
+
+
     // Get para pegar um veículo especifico pelo id recebido pelo parametro e seu motorista
     async getOne(req, res) {
         try {
@@ -33,6 +37,33 @@ class VeiculoController {
             return res.status(400).json({ error: err});
         }
     }
+
+
+
+
+    //encontrar veiculo(s) pelo modelo
+    async getAllModelo(req, res) {
+        try {
+            let search = req.params.modelo
+            
+            let query = '%'+search+'%';
+            console.log('AQUI')
+            console.log(query)
+            let veiculo_search = await Veiculo.findAll({
+                include: { model: Motor },
+                where: {
+                    modelo: {[Op.like]: query },
+                }
+            })
+            
+            return res.status(200).json(veiculo_search)
+        }
+        catch (e) {
+            return res.status(400).json({ error: ' não rolou' });
+        }
+    }
+
+
 
 
     //Post para criar um veículo.

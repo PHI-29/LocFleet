@@ -186,7 +186,7 @@ function getDados(g) {
 }
 
 //Envia os dados do formulario para a api
-async function enviar_dados(veiculo) {
+function enviar_dados(veiculo) {
     const url = 'http://localhost:3000/veiculo/add'
 
     let fetchData = {

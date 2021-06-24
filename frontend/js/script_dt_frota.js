@@ -15,7 +15,7 @@ async function preencher_dados(){
             resposta ='<b style="color:#e82121">Sem motorista</b>';
         }
         else{
-           resposta = JSON.stringify(dados.Motors[0].nome)
+           resposta = dados.Motors[0].nome
         }
 
     document.querySelector("#modelo").innerHTML = dados.modelo

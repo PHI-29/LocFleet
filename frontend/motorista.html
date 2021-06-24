@@ -65,9 +65,14 @@
 
                 <h4 id="texto-inicio">Visualize os motoristas cadastrados e adicione outros.</h4>
 
-                <label for="veiculo">Busque um motoristas:</label>
-                <input type="text" name="veiculo" placeholder="Ex: André">
-                <button class="btn_add" type="button">Buscar</button>
+                <label for="find_motor">liste motoristas pelo nome:</label>
+
+                <input type="text" name="find_motor" id="find_motor" 
+                placeholder="Informe o primeiro nome">
+
+                <button class="btn_add" onclick="find_motor_btn()" type="button">Buscar</button>
+
+                <button class="btn_add" onclick="reset_tab_btn()" type="button">Todos os Motoristas</button>
 
                 <button class="btn_add" type="button" onclick="add_motorista()">
                     Adicionar novo motoristas.</button>

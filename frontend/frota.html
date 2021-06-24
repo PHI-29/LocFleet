@@ -63,14 +63,19 @@
         <article>
             <section>
 
-                <h4 id="texto-inicio">Visualize os veículos cadastrados e adicione mais a sua frota</h4>
+                <h4 id="texto-inicio">Visualize os veículos e caso queira adicione outros.</h4>
 
-                <label for="veiculo">Busque um veiculo:</label>
-                <input type="text" name="veiculo" placeholder="Ex: Fox Trendline">
-                <button class="btn_add" type="button">Buscar</button>
+                <label for="find_veiuculo">liste veículos pelo modelo:</label>
+
+                <input type="text" name="find_veiuculo" id="find_veiuculo" 
+                placeholder="Informe o modelo">
+
+                <button class="btn_add" onclick="find_veiuclo_btn()" type="button">Buscar</button>
+
+                <button class="btn_add" onclick="reset_tab_btn()" type="button">Todos os veículos</button>
 
                 <button class="btn_add" type="button" onclick="add_veiculo()">
-                    Adicionar novo veiculo.</button>
+                    Adicionar novo Veículo.</button>
 
             </section>
             <section>

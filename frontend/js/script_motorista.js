@@ -1,15 +1,70 @@
-window.onload = function(){
-    cadastrar_dados();
+//Chama a função get_all_dados assim que toda a pagina é carregada
+window.onload = function () {
+    get_all_dados();
 }
 
-function add_motorista(){
-    window.location.href="cadt_motorista.html";
+
+
+//função ligada ao botão para adicionar novos motoristas que redireciona o usuario a pagina de adição
+function add_motorista() {
+    window.location.href = "cadt_motorista.html";
 }
 
-async function cadastrar_dados(){
-    let req = await fetch('http://localhost:3000/motorista/listar');
+
+
+function reset_tab_btn() {
+
+    apagarTabela()
+
+    get_all_dados();
+}
+
+
+
+// Função para pegar todos os motoristas
+async function get_all_dados() {
+    let req = await fetch(`http://localhost:3000/motorista/listar/`);
     let dados = await req.json();
 
+    this.imprimir_dados(dados);
+}
+
+
+
+//Pega a informação no input e depois o limpa
+function find_motor_btn() {
+    const search = document.querySelector("#find_motor").value
+
+    if (!search) window.alert("Digite o nome do motorista que deseja verificar")
+    else {
+
+        document.querySelector("#find_motor").value = "";
+
+        enviar_dados(search)
+
+    }
+}
+
+
+
+//Pegar todos os motoristas que o usuario pesquisou
+async function enviar_dados(search) {
+    const url = `http://localhost:3000/motorista/listar/${search}`
+    let resposta = await fetch(url)
+    let dados = await resposta.json();
+
+    if (dados.length === 0) window.alert("Motorista não encontrado")
+    else {
+        apagarTabela()
+
+        this.imprimir_dados(dados);
+    }
+}
+
+
+
+// imprime os dados na tela em forma de tabela
+function imprimir_dados(dados) {
 
     const table = document.querySelector("#motorista");
     dados.forEach(motorista => {
@@ -19,22 +74,30 @@ async function cadastrar_dados(){
         let celular = linha.insertCell(2);
         let placa_atual = linha.insertCell(3);
         let detalhes_motorista = linha.insertCell(4)
-        
+
         let resposta;
-        console.log(motorista.Veiculo)
-        if(!motorista.Veiculo){
-            resposta ='<b style="color:#e82121">Sem veículo</b>';
+        if (!motorista.Veiculo) {
+            resposta = '<b style="color:#e82121">Sem veículo</b>';
         }
-        else{
-           resposta = JSON.stringify(motorista.Veiculo.placa)
+        else {
+            resposta = motorista.Veiculo.placa
         }
 
         nome.innerHTML = motorista.nome;
         email.innerHTML = motorista.email;
         celular.innerHTML = motorista.cel;
         placa_atual.innerHTML = resposta;
-        detalhes_motorista.innerHTML = 
-        '<a href="detalhe_motorista.html?id='+motorista.id+'"><button class="btn_tab">Detalhes</button></a>';
-        
+        detalhes_motorista.innerHTML =
+            '<a href="detalhe_motorista.html?id=' + motorista.id + '"><button class="btn_tab">Detalhes</button></a>';
+
     });
+}
+
+
+
+function apagarTabela(){
+    const tables = document.querySelector("#motorista").rows;
+    for(let i=tables.length-1; i >= 1 ; i--){
+        document.querySelector("#motorista").deleteRow(i)
+    }
 }
