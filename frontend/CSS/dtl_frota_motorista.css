@@ -32,6 +32,11 @@
     margin-right: 20px;
 
 }
+.btn:hover{
+    background-color: #030303dc;
+    transition: .3s;
+    cursor: pointer;
+}
 .full-box{
     flex: 1 1 100%;
     position: relative;

@@ -12,6 +12,6 @@ routes.post('/add', MotorController.create);
 
 routes.delete('/del/:id', MotorController.delete);
 
-routes.put('/upd/:id', VeiculoController.update);
+routes.put('/upd/:id', MotorController.update);
 
 module.exports = routes;

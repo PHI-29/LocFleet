@@ -43,6 +43,7 @@ h4{
 .btn_add:hover{
     background-color: #030303d2;
     transition: .3s;
+    cursor: pointer;
 }
 table{
     position:relative;

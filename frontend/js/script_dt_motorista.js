@@ -18,11 +18,11 @@ function pegar_id() {
 
 //Função para pegar os dados na Api
 async function pegar_dados(id) {
-    let req = await fetch('http://localhost:3000/motorista/listar/id/' + id);
+    let req = await fetch(`http://localhost:3000/motorista/listar/id/${id}`);
     let dados = await req.json();
 
     this.preencher_dados(dados)
-
+    this.redireciona(dados)
 }
 
 
@@ -88,6 +88,22 @@ function remover(id) {
             const url = `http://localhost:3000/motorista/del/${id}`
             let resposta = fetch(url, fetchData)
             window.location.href = "motorista.html";
+        }
+    })
+}
+
+
+
+//Função para redirecionar para a pagina do veículo correspondente
+function redireciona(dados) {
+    let btn_redi = document.getElementById('redireciona');
+
+    btn_redi.addEventListener('click', () => {
+        if (!dados.Veiculo) {
+            alert("Este veículo ainda não possui um condutor.")
+        }
+        else {
+           window.location.href = 'detalhe_frota.html?id=' + dados.Veiculo.id +''
         }
     })
 }
