@@ -10,17 +10,6 @@ function add_motorista() {
     window.location.href = "cadt_motorista.html";
 }
 
-
-
-function reset_tab_btn() {
-
-    apagarTabela()
-
-    get_all_dados();
-}
-
-
-
 // Função para pegar todos os motoristas
 async function get_all_dados() {
     let req = await fetch(`http://localhost:3000/motorista/listar/`);
@@ -35,13 +24,15 @@ async function get_all_dados() {
 function find_motor_btn() {
     const search = document.querySelector("#find_motor").value
 
-    if (!search) window.alert("Digite o nome do motorista que deseja verificar")
-    else {
+    if (!search) {
+        apagarTabela()
 
+        get_all_dados();
+    }
+    else {
         document.querySelector("#find_motor").value = "";
 
         enviar_dados(search)
-
     }
 }
 
@@ -95,9 +86,9 @@ function imprimir_dados(dados) {
 
 
 
-function apagarTabela(){
+function apagarTabela() {
     const tables = document.querySelector("#motorista").rows;
-    for(let i=tables.length-1; i >= 1 ; i--){
+    for (let i = tables.length - 1; i >= 1; i--) {
         document.querySelector("#motorista").deleteRow(i)
     }
 }

@@ -4,7 +4,7 @@ const Op = Sequelize.Op
 
 
 class MotorController {
-
+    //Encontrar todos os motoristas cadastrados
     async getAll(req, res) {
         try {
             const Motors_resultado = await Motor.findAll({
@@ -21,7 +21,7 @@ class MotorController {
 
 
 
-
+    //Encontrar um motorista pelo id
     async getOne(req, res) {
         try {
             const motorista_resultado = await Motor.findByPk(req.params.id, {
@@ -44,19 +44,19 @@ class MotorController {
         try {
             let search = req.params.nome
 
-            let query = '%'+search+'%';
-            
+            let query = '%' + search + '%';
+
             let motorista_search = await Motor.findAll({
                 include: { model: Veiculo },
                 where: {
-                    nome: {[Op.like]: query },
+                    nome: { [Op.like]: query },
                 }
             })
 
             return res.status(200).json(motorista_search)
         }
-        catch (e) {
-            return res.status(400).json({ error: ' não rolou' });
+        catch (err) {
+            return res.status(400).json({ error: err });
         }
     }
 
@@ -93,6 +93,25 @@ class MotorController {
             return res.status(400).json({ error: err });
         }
     }
-}
 
+
+
+    //deletar um motorista pelo id.
+    async delete(req, res) {
+        try {
+            const motorista_delete = await Motor.findByPk(req.params.id);
+            console.log(motorista_delete)
+            if (motorista_delete) {
+                await motorista_delete.destroy();
+                return res.status(200).json(motorista_delete)
+            }
+            else {
+                return res.status(400).json({ mensagem: 'Motorista não encontrado' });
+            }
+        }
+        catch (err) {
+            return res.status(400).json({ error: err });
+        }
+    }
+}
 module.exports = new MotorController();

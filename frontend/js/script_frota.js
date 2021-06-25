@@ -6,18 +6,8 @@ window.onload = function () {
 
 
 //função ligada ao botão para adicionar novos veiculos que redireciona o usuario a pagina de adição
-function add_veiculo(){
-    window.location.href="cadt_frota.html";
-}
-
-
-
-//Função ligada ao botão de listar a tabela novamente 
-function reset_tab_btn() {
-
-    apagarTabela()
-
-    get_all_dados();
+function add_veiculo() {
+    window.location.href = "cadt_frota.html";
 }
 
 
@@ -36,13 +26,15 @@ async function get_all_dados() {
 function find_veiuclo_btn() {
     const search = document.querySelector("#find_veiuculo").value
 
-    if (!search) window.alert("Digite um modelo")
-    else {
+    if (!search) {
+        apagarTabela()
 
+        get_all_dados();
+    }
+    else {
         document.querySelector("#find_veiuculo").value = "";
 
         enviar_dados(search)
-
     }
 }
 
@@ -76,28 +68,28 @@ function imprimir_dados(dados) {
         let detalhes_veiculos = linha.insertCell(4)
 
         let resposta;
-        if(!veiculos.Motors[0]){
-            resposta ='<b style="color:#e82121">Sem motorista</b>';
+        if (!veiculos.Motors[0]) {
+            resposta = '<b style="color:#e82121">Sem motorista</b>';
         }
-        else{
-           resposta = veiculos.Motors[0].nome
+        else {
+            resposta = veiculos.Motors[0].nome
         }
 
         modelo.innerHTML = veiculos.modelo;
         cor.innerHTML = veiculos.cor;
         placa.innerHTML = veiculos.placa;
         ultimo_condutor.innerHTML = resposta
-        detalhes_veiculos.innerHTML = 
-        '<a href="detalhe_frota.html?id='+veiculos.id+'"><button class="btn_tab">Detalhes</button></a>';
+        detalhes_veiculos.innerHTML =
+            '<a href="detalhe_frota.html?id=' + veiculos.id + '"><button class="btn_tab">Detalhes</button></a>';
     });
 }
 
 
 
 //Função que apaga todos os itens da tabela
-function apagarTabela(){
+function apagarTabela() {
     const tables = document.querySelector("#veiculos").rows;
-    for(let i=tables.length-1; i >= 1 ; i--){
+    for (let i = tables.length - 1; i >= 1; i--) {
         document.querySelector("#veiculos").deleteRow(i)
     }
 }

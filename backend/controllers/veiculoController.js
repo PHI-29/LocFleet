@@ -16,7 +16,7 @@ class VeiculoController {
             return res.status(200).json(Veiculos_resultado);
         }
         catch (err) {
-            return res.status(400).json({ error: err});
+            return res.status(400).json({ error: err });
         }
     }
 
@@ -26,15 +26,15 @@ class VeiculoController {
     // Get para pegar um veículo especifico pelo id recebido pelo parametro e seu motorista
     async getOne(req, res) {
         try {
-            const Veiculos_resultado = await Veiculo.findByPk(req.params.id,{
-                include:{
-                    model:Motor
+            const Veiculos_resultado = await Veiculo.findByPk(req.params.id, {
+                include: {
+                    model: Motor
                 }
             });
             return res.status(200).json(Veiculos_resultado);
         }
         catch (err) {
-            return res.status(400).json({ error: err});
+            return res.status(400).json({ error: err });
         }
     }
 
@@ -45,21 +45,21 @@ class VeiculoController {
     async getAllModelo(req, res) {
         try {
             let search = req.params.modelo
-            
-            let query = '%'+search+'%';
+
+            let query = '%' + search + '%';
             console.log('AQUI')
             console.log(query)
             let veiculo_search = await Veiculo.findAll({
                 include: { model: Motor },
                 where: {
-                    modelo: {[Op.like]: query },
+                    modelo: { [Op.like]: query },
                 }
             })
-            
+
             return res.status(200).json(veiculo_search)
         }
-        catch (e) {
-            return res.status(400).json({ error: ' não rolou' });
+        catch (err) {
+            return res.status(400).json({ error: err });
         }
     }
 
@@ -69,12 +69,12 @@ class VeiculoController {
     //Post para criar um veículo.
     async create(req, res) {
         try {
-            
+
             let usuario_id = await Usuario.findByPk(req.body.UsuarioId);
 
             let veiculo_pegar
-            
-            if (usuario_id){
+
+            if (usuario_id) {
                 veiculo_pegar = {
                     modelo: req.body.modelo,
                     marca: req.body.marca,
@@ -88,9 +88,9 @@ class VeiculoController {
                     valor: req.body.valor,
                     UsuarioId: usuario_cod['dataValues']['id']
                 }
-                
+
             }
-            else{
+            else {
                 veiculo_pegar = {
                     modelo: req.body.modelo,
                     marca: req.body.marca,
@@ -107,11 +107,32 @@ class VeiculoController {
             }
             console.log(veiculo_pegar)
             const Veiculo_resultado = await Veiculo.create(veiculo_pegar);
-                return res.status(200).json(Veiculo_resultado);
-            
+            return res.status(200).json(Veiculo_resultado);
+
         }
         catch (err) {
-            return res.status(400).json({ error: err});
+            return res.status(400).json({ error: err });
+        }
+    }
+
+
+
+
+    //deletar um veículo pelo id.
+    async delete(req, res) {
+        try {
+            const veiculo_delete = await Veiculo.findByPk(req.params.id);
+            console.log(veiculo_delete)
+            if (veiculo_delete) {
+                await veiculo_delete.destroy();
+                return res.status(200).json(veiculo_delete)
+            }
+            else {
+                return res.status(400).json({ mensagem: 'Veiculo não encontrada' });
+            }
+        }
+        catch (err) {
+            return res.status(400).json({ error: err });
         }
     }
 }

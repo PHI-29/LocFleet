@@ -5,23 +5,23 @@ class UsuarioController {
     async getAll(req, res) {
         try {
             const Usuarios_resultado = await Usuario.findAll({
-                include:{
-                    model:Veiculo,
-                    include:{
-                        model:Motor
+                include: {
+                    model: Veiculo,
+                    include: {
+                        model: Motor
                     }
                 }
             });
             return res.status(200).json(Usuarios_resultado);
         }
         catch (err) {
-            return res.status(400).json({ error: err});
+            return res.status(400).json({ error: err });
         }
     }
 
     async create(req, res) {
         try {
-            const usuario_get={
+            const usuario_get = {
                 email: req.body.email,
                 nome: req.body.nome,
                 sobrenome: req.body.sobrenome,
@@ -34,8 +34,8 @@ class UsuarioController {
             const Usuario_resultado = await Usuario.create(usuario_get);
             return res.status(200).json(Usuario_resultado);
         }
-        catch(err) {
-            return res.status(400).json({error: err});
+        catch (err) {
+            return res.status(400).json({ error: err });
         }
     }
 }
