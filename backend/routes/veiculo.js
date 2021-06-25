@@ -12,4 +12,6 @@ routes.post('/add', VeiculoController.create);
 
 routes.delete('/del/:id', VeiculoController.delete);
 
+routes.put('/upd/:id', VeiculoController.update);
+
 module.exports = routes;

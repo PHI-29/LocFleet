@@ -4,7 +4,7 @@ const Op = Sequelize.Op
 
 
 class MotorController {
-    //Encontrar todos os motoristas cadastrados
+    //Pegar todos os motoristas
     async getAll(req, res) {
         try {
             const Motors_resultado = await Motor.findAll({
@@ -19,9 +19,10 @@ class MotorController {
         }
     }
 
+    
 
 
-    //Encontrar um motorista pelo id
+    //Pegar um motorista especifico pelo id
     async getOne(req, res) {
         try {
             const motorista_resultado = await Motor.findByPk(req.params.id, {
@@ -39,7 +40,7 @@ class MotorController {
 
 
 
-    //encontrar motorista(s) pelo nome
+    //Pegar todos os motorista pelo nome
     async getAllName(req, res) {
         try {
             let search = req.params.nome
@@ -63,12 +64,11 @@ class MotorController {
 
 
 
-    //Criar um novo motorista
+    //Adicionar um motorista
     async create(req, res) {
         try {
             let veiculo = await Veiculo.findByPk(req.body.VeiculoId);
 
-            //if (!veiculo){ throw new Error("Veiculo não encontrado");}
             const motorista_get = {
                 email: req.body.email,
                 nome: req.body.nome,
@@ -83,9 +83,7 @@ class MotorController {
                 cep: Number(req.body.cep),
             }
             const motor_resultado = await Motor.create(motorista_get);
-
-            await motor_resultado.setVeiculo(veiculo);
-
+            //await motor_resultado.setVeiculo(veiculo);
             return res.status(200).json(motor_resultado);
 
         }
@@ -96,7 +94,28 @@ class MotorController {
 
 
 
-    //deletar um motorista pelo id.
+
+    //Fazer um update no motorista o selecionando pelo id
+    async update(req, res) {
+        try {
+            const motorista_updated = await Motor.findByPk(req.params.id);
+            if(motorista_updated){
+                await motorista_updated.update(req.body);
+                return res.status(200).json(motorista_updated)
+            }
+            else{
+                return res.status(400).json({ mensagem: 'Motorista não encontrada' });
+            }
+        }
+        catch (err) {
+            return res.status(400).json({error: err});   
+        }
+    }
+
+
+
+
+    //deletar um motorista o selecionando pelo id
     async delete(req, res) {
         try {
             const motorista_delete = await Motor.findByPk(req.params.id);

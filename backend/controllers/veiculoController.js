@@ -3,8 +3,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op
 
 class VeiculoController {
-
-    // Get para pegar todos os veículos e seu motorista
+    //Pegar todos os veículos
     async getAll(req, res) {
         try {
             const Veiculos_resultado = await Veiculo.findAll({
@@ -23,7 +22,7 @@ class VeiculoController {
 
 
 
-    // Get para pegar um veículo especifico pelo id recebido pelo parametro e seu motorista
+    //Pegar um veículo especifico pelo id
     async getOne(req, res) {
         try {
             const Veiculos_resultado = await Veiculo.findByPk(req.params.id, {
@@ -41,7 +40,7 @@ class VeiculoController {
 
 
 
-    //encontrar veiculo(s) pelo modelo
+    //Pegar todos os veículos pelo modelo
     async getAllModelo(req, res) {
         try {
             let search = req.params.modelo
@@ -66,16 +65,12 @@ class VeiculoController {
 
 
 
-    //Post para criar um veículo.
+    //Adicionar um veículo.
     async create(req, res) {
         try {
-
             let usuario_id = await Usuario.findByPk(req.body.UsuarioId);
 
-            let veiculo_pegar
-
-            if (usuario_id) {
-                veiculo_pegar = {
+                let veiculo_pegar = {
                     modelo: req.body.modelo,
                     marca: req.body.marca,
                     ano: req.body.ano,
@@ -86,26 +81,9 @@ class VeiculoController {
                     ulRevisao: req.body.ulRevisao,
                     loc: req.body.loc,
                     valor: req.body.valor,
-                    UsuarioId: usuario_cod['dataValues']['id']
-                }
-
+                    //UsuarioId: usuario_cod['dataValues']['id']
+                
             }
-            else {
-                veiculo_pegar = {
-                    modelo: req.body.modelo,
-                    marca: req.body.marca,
-                    ano: req.body.ano,
-                    placa: req.body.placa,
-                    renavam: req.body.renavam,
-                    cor: req.body.cor,
-                    km: req.body.km,
-                    ulRevisao: req.body.ulRevisao,
-                    loc: req.body.loc,
-                    valor: req.body.valor,
-                }
-                console.log('aqui')
-            }
-            console.log(veiculo_pegar)
             const Veiculo_resultado = await Veiculo.create(veiculo_pegar);
             return res.status(200).json(Veiculo_resultado);
 
@@ -118,7 +96,27 @@ class VeiculoController {
 
 
 
-    //deletar um veículo pelo id.
+    //Fazer um update no veículo o selecionando pelo id
+    async update(req, res) {
+        try {
+            const veiculo_updated = await Veiculo.findByPk(req.params.id);
+            if(veiculo_updated){
+                await veiculo_updated.update(req.body);
+                return res.status(200).json(veiculo_updated)
+            }
+            else{
+                return res.status(400).json({ mensagem: 'Veículo não encontrada' });
+            }
+        }
+        catch (err) {
+            return res.status(400).json({ error: err });   
+        }
+    }
+
+
+
+
+    //Deletar um veículo o selecionando pelo id
     async delete(req, res) {
         try {
             const veiculo_delete = await Veiculo.findByPk(req.params.id);
