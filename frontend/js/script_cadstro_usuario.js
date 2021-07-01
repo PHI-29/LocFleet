@@ -225,31 +225,20 @@ window.onload = () => {
 //Pegar os dados do formulario
 function getDados(g) {
     if (g === 0) {
-        let email_dados = document.querySelector('#email')
-        let nome_dados = document.querySelector('#name')
-        let sobrenome_dados = document.querySelector('#lastname')
-        let dtNascimento_dados = document.querySelector('#dtNascimento')
-        let cpf_dados = document.querySelector('#cpf')
-        let telefone_dados = document.querySelector('#tel')
-        let celular_dados = document.querySelector('#cel')
-        let senha_dados = document.querySelector('#password')
+
         const usuario = {
-            email: email_dados.value,
-            nome: nome_dados.value,
-            sobrenome: sobrenome_dados.value,
-            dtNascimento: dtNascimento_dados.value,
-            cpf: cpf_dados.value,
-            telefone: telefone_dados.value,
-            celular: celular_dados.value,
-            senha: senha_dados.value
+            email: document.querySelector('#email').value,
+            nome: document.querySelector('#name').value,
+            sobrenome: document.querySelector('#lastname').value,
+            dtNascimento: document.querySelector('#dtNascimento').value,
+            cpf: document.querySelector('#cpf').value,
+            telefone: document.querySelector('#tel').value,
+            celular: document.querySelector('#cel').value,
+            senha: document.querySelector('#password').value
         }
         return enviar_dados(usuario)
 
-    }
-    else {
-        console.log("Não pegou os dados")
-    }
-
+    } else { console.log("Não pegou os dados") }
 }
 
 //Envia os dados do formulario para a api
@@ -266,27 +255,27 @@ function enviar_dados(usuario) {
     }
 
     fetch(url, fetchData)
-        .then(res => res.json())
-        .then(resp => console.log(resp))
+        .then(res => limpar_campos(res))
 
-    limpar_campos()
-
-    window.location.href = 'login.html'
 }
 
 //Limpa os campos de texto
-function limpar_campos() {
-    document.querySelector('#email').value = '';
-    document.querySelector('#name').value = '';
-    document.querySelector('#lastname').value = '';
-    document.querySelector('#dtNascimento').value = '';
-    document.querySelector('#cpf').value = '';
-    document.querySelector('#tel').value = '';
-    document.querySelector('#cel').value = '';
-    document.querySelector('#password').value = '';
-    document.querySelector('#passConfirmation').value = '';
+async function limpar_campos(res) {
+    if (res.status === 200) {
+        document.querySelector('#email').value = '';
+        document.querySelector('#name').value = '';
+        document.querySelector('#lastname').value = '';
+        document.querySelector('#dtNascimento').value = '';
+        document.querySelector('#cpf').value = '';
+        document.querySelector('#tel').value = '';
+        document.querySelector('#cel').value = '';
+        document.querySelector('#password').value = '';
+        document.querySelector('#passConfirmation').value = '';
 
-    //atribui tempo até o servidor coletar todos os dados
-    for (let i = 0; i < 30000; i++) {
+        window.location.href = 'login.html'
+    } else {
+        let resposta = await res.json()
+        alert(resposta.mensagem)
     }
+
 }

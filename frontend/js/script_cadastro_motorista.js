@@ -184,30 +184,18 @@ window.onload = () => {
 //Pegar os dados do formulario
 function getDados(g) {
     if (g === 0) {
-        let email_dados = document.querySelector('#email')
-        let nome_dados = document.querySelector('#nome')
-        let sobrenome_dados = document.querySelector('#lastname')
-        let dtNascimento_dados = document.querySelector('#dtNascimento')
-        let cpf_dados = document.querySelector('#cpf')
-        let telefone_dados = document.querySelector('#tel')
-        let celular_dados = document.querySelector('#cel')
-        let dtEmissao_dados = document.querySelector('#dtEmissao')
-        let dtvencimento_dados = document.querySelector('#dtvencimento')
-        let numCNH_dados = document.querySelector('#numCNH')
-        let cep_dados = document.querySelector('#cep')
-
         const motorista = {
-            email: email_dados.value,
-            nome: nome_dados.value,
-            sobrenome: sobrenome_dados.value,
-            dtNascimento: dtNascimento_dados.value,
-            cpf: cpf_dados.value,
-            tel: telefone_dados.value,
-            cel: celular_dados.value,
-            dtEmissao: dtEmissao_dados.value,
-            dtvencimento: dtvencimento_dados.value,
-            numCNH: numCNH_dados.value,
-            cep: cep_dados.value,
+            email: document.querySelector('#email').value,
+            nome: document.querySelector('#nome').value,
+            sobrenome: document.querySelector('#lastname').value,
+            dtNascimento: document.querySelector('#dtNascimento').value,
+            cpf: document.querySelector('#cpf').value,
+            tel: document.querySelector('#tel').value,
+            cel: document.querySelector('#cel').value,
+            dtEmissao: document.querySelector('#dtEmissao').value,
+            dtvencimento: document.querySelector('#dtvencimento').value,
+            numCNH: document.querySelector('#numCNH').value,
+            cep: document.querySelector('#cep').value,
         }
         return enviar_dados(motorista)
 
@@ -232,29 +220,29 @@ function enviar_dados(motorista) {
     }
 
     fetch(url, fetchData)
-        .then(res => res.json())
-        .then(resp => console.log(resp))
+        .then(res => limpar_campos(res))
 
-    limpar_campos()
-
-    window.location.href = 'motorista.html'
 }
 
 //Limpa os campos de texto
-function limpar_campos() {
-    document.querySelector('#email').value = '';
-    document.querySelector('#nome').value = '';
-    document.querySelector('#lastname').value = '';
-    document.querySelector('#dtNascimento').value = '';
-    document.querySelector('#cpf').value = '';
-    document.querySelector('#tel').value = '';
-    document.querySelector('#cel').value = '';
-    document.querySelector('#dtEmissao').value = '';
-    document.querySelector('#dtvencimento').value = '';
-    document.querySelector('#numCNH').value = '';
-    document.querySelector('#cep').value = '';
+async function limpar_campos(res) {
+    if (res.status === 200) {
+        document.querySelector('#email').value = '';
+        document.querySelector('#nome').value = '';
+        document.querySelector('#lastname').value = '';
+        document.querySelector('#dtNascimento').value = '';
+        document.querySelector('#cpf').value = '';
+        document.querySelector('#tel').value = '';
+        document.querySelector('#cel').value = '';
+        document.querySelector('#dtEmissao').value = '';
+        document.querySelector('#dtvencimento').value = '';
+        document.querySelector('#numCNH').value = '';
+        document.querySelector('#cep').value = '';
 
-    //atribui tempo até o servidor coletar todos os dados
-    for (let i = 0; i < 30000; i++) {
+        window.location.href = 'motorista.html'
+
+    } else {
+        let resposta = await res.json()
+        alert(resposta.mensagem)
     }
 }

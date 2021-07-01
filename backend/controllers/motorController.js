@@ -19,7 +19,7 @@ class MotorController {
         }
     }
 
-    
+
 
 
     //Pegar um motorista especifico pelo id
@@ -66,26 +66,31 @@ class MotorController {
 
     //Adicionar um motorista
     async create(req, res) {
+        const findMotor = await Motor.findOne({
+            where: { email: req.body.email }
+        })
         try {
-            let veiculo = await Veiculo.findByPk(req.body.VeiculoId);
+            if (!findMotor) {
+                const motorista_get = {
+                    email: req.body.email,
+                    nome: req.body.nome,
+                    sobrenome: req.body.sobrenome,
+                    dtNascimento: req.body.dtNascimento,
+                    cpf: Number(req.body.cpf),
+                    tel: Number(req.body.tel),
+                    cel: Number(req.body.cel),
+                    dtEmissao: req.body.dtEmissao,
+                    dtvencimento: req.body.dtvencimento,
+                    numCNH: req.body.numCNH,
+                    cep: Number(req.body.cep),
+                }
 
-            const motorista_get = {
-                email: req.body.email,
-                nome: req.body.nome,
-                sobrenome: req.body.sobrenome,
-                dtNascimento: req.body.dtNascimento,
-                cpf: Number(req.body.cpf),
-                tel: Number(req.body.tel),
-                cel: Number(req.body.cel),
-                dtEmissao: req.body.dtEmissao,
-                dtvencimento: req.body.dtvencimento,
-                numCNH: req.body.numCNH,
-                cep: Number(req.body.cep),
+                const motor_resultado = await Motor.create(motorista_get);
+                return res.status(200).json(motor_resultado);
+                
+            } else {
+                return res.status(400).json({ mensagem: "Este e-mail já está cadastrado" });
             }
-            const motor_resultado = await Motor.create(motorista_get);
-            //await motor_resultado.setVeiculo(veiculo);
-            return res.status(200).json(motor_resultado);
-
         }
         catch (err) {
             return res.status(400).json({ error: err });
@@ -99,16 +104,16 @@ class MotorController {
     async update(req, res) {
         try {
             const motorista_updated = await Motor.findByPk(req.params.id);
-            if(motorista_updated){
+            if (motorista_updated) {
                 await motorista_updated.update(req.body);
                 return res.status(200).json(motorista_updated)
             }
-            else{
+            else {
                 return res.status(400).json({ mensagem: 'Motorista não encontrada' });
             }
         }
         catch (err) {
-            return res.status(400).json({error: err});   
+            return res.status(400).json({ error: err });
         }
     }
 

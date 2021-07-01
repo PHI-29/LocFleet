@@ -62,7 +62,6 @@ module.exports = {
           as: "VeiculoId"
         },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,

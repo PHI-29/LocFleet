@@ -18,10 +18,6 @@ function redireciona_notificacoes(){
     window.location.href = "notificação.html";
 }
 
-function redireciona_financeiro(){
-    window.location.href = "financeiro.html";
-}
-
 function redireciona_mais(){
     window.location.href = "saiba_mais.html";
 }

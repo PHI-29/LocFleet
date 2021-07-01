@@ -100,7 +100,7 @@ function redireciona(dados) {
 
     btn_redi.addEventListener('click', () => {
         if (!dados.Veiculo) {
-            alert("Este veículo ainda não possui um condutor.")
+            alert("Este condutor ainda não possui um veículo atribuido.")
         }
         else {
            window.location.href = 'detalhe_frota.html?id=' + dados.Veiculo.id +''

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/login.css">
     <Script type="text/JavaScript" src="js/Script_header.js"></Script>
+    <Script type="text/JavaScript" src="js/Script_login.js"></Script>
     <title>Login - LocFleet</title>
 </head>
 
@@ -45,11 +46,6 @@
                     </button>
                 </li>
                 <li class="li">
-                    <button class="btn_menu_li" onclick="redireciona_financeiro()">
-                        <p>Ficanceiro</p>
-                    </button>
-                </li>
-                <li class="li">
                     <button class="btn_menu_li" onclick="redireciona_mais()">
                         <p>Saiba Mais</p>
                     </button>
@@ -64,12 +60,15 @@
 
             <h1>Login</h1>
             <form action="">
-                <label for="Email">E-mail</label>
-                <input type="Email" name="Email" id="Email" placeholder="Digite o seu Email" autocomplete="off">
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" placeholder="Digite a sua senha">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite o seu Email" autocomplete="off">
+
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite a sua senha">
+
                 <a href="#" id="recuperar_senha">Esqueceu a senha?</a>
-                <input type="submit" value="login">
+
+                <input type="submit" id="btn_submit" value="login">
             </form>
 
             <section id="social_container">

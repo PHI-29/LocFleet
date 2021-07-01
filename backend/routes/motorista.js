@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const MotorController = require('../controllers/motorController');
+const jwt = require('jsonwebtoken');
 const routes = Router();
 
 routes.get('/listar', MotorController.getAll);
