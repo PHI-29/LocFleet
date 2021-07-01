@@ -153,28 +153,17 @@ window.onload = () => {
 //Pegar os dados do formulario
 function getDados(g) {
     if (g === 0) {
-        let modelo_dados = document.querySelector('#modelo')
-        let marca_dados = document.querySelector('#marca')
-        let ano_dados = document.querySelector('#ano')
-        let placa_dados = document.querySelector('#placa')
-        let renavam_dados = document.querySelector('#renavam')
-        let cor_dados = document.querySelector('#cor')
-        let km_dados = document.querySelector('#km')
-        let ulRevisao_dados = document.querySelector('#ulRevisao')
-        let loc_dados = document.querySelector('#loc')
-        let valor_dados = document.querySelector('#valor')
-
         const veiculo = {
-            modelo: modelo_dados.value,
-            marca: marca_dados.value,
-            ano: ano_dados.value,
-            placa: placa_dados.value,
-            renavam: renavam_dados.value,
-            cor: cor_dados.value,
-            km: km_dados.value,
-            ulRevisao: ulRevisao_dados.value,
-            loc: loc_dados.value,
-            valor: valor_dados.value
+            modelo: document.querySelector('#modelo').value,
+            marca: document.querySelector('#marca').value,
+            ano: document.querySelector('#ano').value,
+            placa: document.querySelector('#placa').value,
+            renavam: document.querySelector('#renavam').value,
+            cor: document.querySelector('#cor').value,
+            km: document.querySelector('#km').value,
+            ulRevisao: document.querySelector('#ulRevisao').value,
+            loc: document.querySelector('#loc').value,
+            valor: document.querySelector('#valor').value
         }
         return enviar_dados(veiculo)
 
@@ -182,7 +171,6 @@ function getDados(g) {
     else {
         console.log("Não pegou os dados")
     }
-
 }
 
 //Envia os dados do formulario para a api
@@ -194,33 +182,31 @@ function enviar_dados(veiculo) {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
-        },
+        }, 
         body: JSON.stringify(veiculo)
     }
 
     fetch(url, fetchData)
-        .then(res => res.json())
-        .then(resp => console.log(resp))
-
-    limpar_campos()
-
-    window.location.href = 'frota.html'
+        .then(res =>  limpar_campos(res))
 }
 
 //Limpa os campos de texto
-function limpar_campos() {
-    document.querySelector('#modelo')
-    document.querySelector('#marca')
-    document.querySelector('#ano')
-    document.querySelector('#placa')
-    document.querySelector('#renavam')
-    document.querySelector('#cor')
-    document.querySelector('#km')
-    document.querySelector('#ulRevisao')
-    document.querySelector('#loc')
-    document.querySelector('#valor')
+async function limpar_campos(res) {
+    if (res.status === 200) {
+        document.querySelector('#modelo').value = '';
+        document.querySelector('#marca').value = '';
+        document.querySelector('#ano').value = '';
+        document.querySelector('#placa').value = '';
+        document.querySelector('#renavam').value = '';
+        document.querySelector('#cor').value = '';
+        document.querySelector('#km').value = '';
+        document.querySelector('#ulRevisao').value = '';
+        document.querySelector('#loc').value = '';
+        document.querySelector('#valor').value = '';
 
-    //atribui tempo até o servidor coletar todos os dados
-    for (let i = 0; i < 30000; i++) {
+        window.location.href = 'frota.html'
+    } else {
+        let resposta = await res.json()
+        alert(resposta.mensagem)
     }
 }

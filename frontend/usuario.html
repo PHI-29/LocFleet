@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="CSS/padrao.css">
   <link rel="stylesheet" type="text/css" href="CSS/header.css">
-  <link rel="stylesheet" type="text/css" href="CSS/dtl_frota_motorista.css">
+  <link rel="stylesheet" type="text/css" href="CSS/usuario.css">
   <script type="text/JavaScript" src="js/Script_header.js"></script>
-  <Script type="text/JavaScript" src="js/script_dt_motorista.js"></Script>
-  <title>Detalhe Motorista - LocFleet</title>
+  <Script type="text/JavaScript" src="js/usuario.js"></Script>
+  <title>Usuario - LocFleet</title>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
   <main>
     <article>
       <section>
-        <h2>Visualize as informações do Motorista.</h2>
+        <h2>Visualize suas informações.</h2>
 
         <br>
 
@@ -108,40 +108,21 @@
         </div>
 
         <div class="half-box spacing">
-          <label for="dtEmissao">Data de Emissão</label>
+          <label for="veiculo">Total de veículos cadastrados</label>
 
-          <p name="dtEmissao" id="dtEmissao"></p>
+          <p name="veiculo" id="veiculo"></p>
         </div>
 
         <div class="half-box">
-          <label for="dtvencimento">Data de Vencimento</label>
+          <label for="motorista">Total de motoristas cadastrados</label>
 
-          <p name="dtvencimento" id="dtvencimento"></p>
+          <p name="motorista" id="motorista"></p>
         </div>
 
-        <div class="half-box spacing">
-          <label for="numCNH">CNH</label>
-
-          <p name="numCNH" id="numCNH"></p>
-        </div>
-
-        <div class="half-box">
-          <label for="cep">CEP</label>
-
-          <p name="cep" id="cep"></p>
-        </div>
-
-        <div class="half-box spacing">
-          <label for="placa_at">Placa Atual</label>
-
-          <p name="placa_at" id="placa_at"></p>
-        </div>
       </section>
 
       <section id="btn_selct">
-        <button type="button" class="btn" id="redireciona">Verificar placa atual</button>
-        <button type="button" class="btn" id="redireciona_edit">Editar motorista</button>
-        <button type="button" class="btn" id="remover">Excluir</button>
+        <button type="button" class="btn" id="remover">Excluir perfil</button>
       </section>
 
     </article>
