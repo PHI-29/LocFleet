@@ -83,6 +83,7 @@ class MotorController {
                     dtvencimento: req.body.dtvencimento,
                     numCNH: req.body.numCNH,
                     cep: Number(req.body.cep),
+                    VeiculoId: req.body.VeiculoId
                 }
 
                 const motor_resultado = await Motor.create(motorista_get);

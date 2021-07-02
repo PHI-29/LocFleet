@@ -38,6 +38,12 @@ function preencher_dados(dados) {
     }
 
 
+    //verifica se possui telefone
+    let telefone
+    if (dados.telefone === 0) { telefone = '<b style="color:#e82121">não possui telefone</b>'; }
+    else { telefone = dados.telefone }
+
+
     //Deixa a data no formato padrão
     //pegar as datas
     let dataNas = dados.dtNascimento
@@ -58,7 +64,7 @@ function preencher_dados(dados) {
     document.querySelector('#lastname').innerHTML = dados.sobrenome
     document.querySelector('#dtNascimento').innerHTML = dataNas
     document.querySelector('#cpf').innerHTML = dados.cpf
-    document.querySelector('#tel').innerHTML = dados.tel
+    document.querySelector('#tel').innerHTML = telefone
     document.querySelector('#cel').innerHTML = dados.cel
     document.querySelector('#dtEmissao').innerHTML = dataEmi
     document.querySelector('#dtvencimento').innerHTML = datavenc
@@ -103,7 +109,7 @@ function redireciona(dados) {
             alert("Este condutor ainda não possui um veículo atribuido.")
         }
         else {
-           window.location.href = 'detalhe_frota.html?id=' + dados.Veiculo.id +''
+            window.location.href = 'detalhe_frota.html?id=' + dados.Veiculo.id + ''
         }
     })
 }

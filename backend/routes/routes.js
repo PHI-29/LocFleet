@@ -20,7 +20,6 @@ routes.use('/veiculo', veiculoRouter);
 
 routes.use('/motorista', motoristaRouter);
 
-
 routes.post('/login', async (req, res) => {
 
     const findUser = await Usuario.findOne({

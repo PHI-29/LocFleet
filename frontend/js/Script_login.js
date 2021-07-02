@@ -41,7 +41,8 @@ async function confirmarDados(res) {
     if (res.status === 200) {
         let dados = await res.json()
         console.log(dados.id)
+        window.location.href = 'usuario.html?id=' + dados.id + ''
     } else {
-        alert('Por favor verifique os campos, alguma informação pode estar incorreta')
+        alert('Verifique os campos, as informações estão incorretas')
     }
 }

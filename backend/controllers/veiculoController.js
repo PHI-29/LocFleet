@@ -82,7 +82,7 @@ class VeiculoController {
                     ulRevisao: req.body.ulRevisao,
                     loc: req.body.loc,
                     valor: req.body.valor,
-                    //UsuarioId: usuario_cod['dataValues']['id']
+                    UsuarioId: req.body.UsuarioId,
 
                 }
                 const Veiculo_resultado = await Veiculo.create(veiculo_pegar);
