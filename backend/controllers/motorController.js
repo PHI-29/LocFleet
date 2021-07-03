@@ -88,7 +88,7 @@ class MotorController {
 
                 const motor_resultado = await Motor.create(motorista_get);
                 return res.status(200).json(motor_resultado);
-                
+
             } else {
                 return res.status(400).json({ mensagem: "Este e-mail já está cadastrado" });
             }
@@ -105,13 +105,38 @@ class MotorController {
     async update(req, res) {
         try {
             const motorista_updated = await Motor.findByPk(req.params.id);
+
             if (motorista_updated) {
-                await motorista_updated.update(req.body);
-                return res.status(200).json(motorista_updated)
-            }
-            else {
-                return res.status(400).json({ mensagem: 'Motorista não encontrada' });
-            }
+                if (req.body.placa) {
+
+                    const veiculoID = await Veiculo.findOne({ where: { placa: req.body.placa } })
+
+                    const motorista_up = {
+                        email: req.body.email,
+                        tel: req.body.tel,
+                        cel: req.body.cel,
+                        dtEmissao: req.body.dtEmissao,
+                        dtvencimento: req.body.dtvencimento,
+                        cep: req.body.cep,
+                        VeiculoId: veiculoID.id
+                    }
+                    await motorista_updated.update(motorista_up);
+                    return res.status(200).json(motorista_updated)
+
+                } else {
+                    const motorista_up = {
+                        email: req.body.email,
+                        tel: req.body.tel,
+                        cel: req.body.cel,
+                        dtEmissao: req.body.dtEmissao,
+                        dtvencimento: req.body.dtvencimento,
+                        cep: req.body.cep,
+                        VeiculoId: null
+                    }
+                    await motorista_updated.update(motorista_up);
+                    return res.status(200).json(motorista_updated)
+                }
+            } else { return res.status(400).json({ mensagem: 'Motorista não encontrada' }); }
         }
         catch (err) {
             return res.status(400).json({ error: err });

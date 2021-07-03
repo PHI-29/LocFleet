@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/padrao.css">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <link rel="stylesheet" type="text/css" href="CSS/edicao_frota_motor.css">
+    <script type="text/JavaScript" src="js/Script_header.js"></script>
+    <Script type="text/JavaScript" src="js/script_edicao_frota.js"></Script>
+    <title>Detalhe Veículos - LocFleet</title>
+</head>
+
+<body>
+    <!-- Cabeçalho e menus de interação-->
+    <header>
+        <nav>
+            <div>
+                <button class="btn_menu_li" onclick="redireciona_home()">
+                    <img class="logo" src="CSS/imagens/Logo.png" alt="Logo"></button>
+            </div>
+            <button class="btn_menu">&#9776;</button>
+            <ul class="ul">
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_perfil()">
+                        <p>Perfil</p>
+                    </button>
+                </li>
+
+                <li class="li"><button class="btn_menu_li" onclick="redireciona_frota()">
+                        <p>Frota</p>
+                    </button>
+
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_motorista()">
+                        <p>Motorista</p>
+                    </button>
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_notificacoes()">
+                        <p>Notificações</p>
+                    </button>
+                </li>
+                <li class="li">
+                    <button class="btn_menu_li" onclick="redireciona_mais()">
+                        <p>Saiba Mais</p>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Corpo do arquivo-->
+    <main>
+        <article>
+            <section>
+                <h2>
+                    <p>Mude as informações do seu veículo.</p>
+                </h2>
+
+                <br>
+
+            </section>
+
+            <section class="sec">
+
+                <div class="half-box spacing">
+                    <label for="modelo">Modelo</label>
+
+                    <p id="modelo"></p>
+                </div>
+
+                <div class="half-box">
+                    <label for="marca">Marca</label>
+
+                    <p id="marca"></p>
+                </div>
+
+                <div class="full-box">
+                    <label for="ultima_revi">Última Revisão</label>
+
+                    <input type="date" name="ulRevisao" id="ulRevisao" data-required>
+                </div>
+
+                <div class="half-box spacing">
+                    <label for="placa">Placa</label>
+
+                    <p  id="placa"></p>
+                </div>
+
+                <div class="half-box">
+                    <label for="renavam">Renavam</label>
+
+                    <p id="renavam"></p>
+                </div>
+
+                <div class="half-box spacing">
+                    <label for="cor">Cor</label>
+
+                    <input type="text" name="cor" id="cor" 
+                        placeholder="Informe a cor do veículo" maxlength="15" data-required
+                        data-somente-letras>
+                </div>
+
+                <div class="half-box">
+                    <label for="km">Quilometragem</label>
+
+                    <input type="text" name="km" id="km" 
+                        placeholder="Informe a quilometragem do veículo" maxlength="7" data-required>
+                </div>
+
+                <div class="half-box spacing">
+                    <label for="loc">Localização</label>
+
+                    <input type="text" name="loc" id="loc" 
+                        placeholder="Informe estacionamento onde seu veículo se encontra" 
+                        data-required>
+                </div>
+
+                <div class="half-box">
+                    <label for="valor">Valor da Locação</label>
+
+                    <input type="text" name="valor" id="valor" 
+                        placeholder="Informe o valor do estacionamento" data-required>
+                </div>
+
+                <div class="half-box spacing">
+                    <label for="ano">Ano</label>
+
+                    <p id="ano"></p>
+                </div>
+
+                <div class="half-box">
+                    <label for="Condutor_atual">Condutor Atual</label>
+
+                    <p type="text" name="Condutor_atual" id="Condutor_atual" data-required></p>
+                </div>
+            </section>
+
+            <section id="btn_selct">
+                <button type="button" class="btn" id="salvar">salvar</button>
+                <button type="button" class="btn" id="cancelar">cancelar</button>
+            </section>
+        </article>
+    </main>
+
+    <!-- Rodapé-->
+    <footer>
+        <h3>@LocFleet - Aproveite nossos Serviços</h3>
+    </footer>
+</body>
+
+</html>

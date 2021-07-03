@@ -3,7 +3,7 @@ module.exports = (sequelize, Sequelize) => {
       email: Sequelize.STRING,
       nome: Sequelize.STRING,
       sobrenome: Sequelize.STRING,
-      dtNascimento: Sequelize.DATE,
+      dtNascimento: Sequelize.STRING,
       cpf: Sequelize.BIGINT,
       telefone: Sequelize.BIGINT,
       celular: Sequelize.BIGINT,

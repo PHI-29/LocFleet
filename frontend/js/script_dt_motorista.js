@@ -23,6 +23,7 @@ async function pegar_dados(id) {
 
     this.preencher_dados(dados)
     this.redireciona(dados)
+    this.redirecionar_editar(dados)
 }
 
 
@@ -40,8 +41,10 @@ function preencher_dados(dados) {
 
     //verifica se possui telefone
     let telefone
-    if (dados.telefone === 0) { telefone = '<b style="color:#e82121">não possui telefone</b>'; }
-    else { telefone = dados.telefone }
+    if (dados.tel === 0 || dados.tel < 0) { 
+        telefone = '<b style="color:#e82121">não possui telefone</b>'; 
+    }
+    else { telefone = dados.tel }
 
 
     //Deixa a data no formato padrão
@@ -92,7 +95,7 @@ function remover(id) {
             }
 
             const url = `http://localhost:3000/motorista/del/${id}`
-            let resposta = fetch(url, fetchData)
+            fetch(url, fetchData)
             window.location.href = "motorista.html";
         }
     })
@@ -111,5 +114,15 @@ function redireciona(dados) {
         else {
             window.location.href = 'detalhe_frota.html?id=' + dados.Veiculo.id + ''
         }
+    })
+}
+
+
+
+//Função para redirecionar para a pagina de edição
+function redirecionar_editar(dados) {
+    let btn_redi_edit = document.getElementById('redireciona_edit');
+    btn_redi_edit.addEventListener('click', () => {
+        window.location.href = 'edicao_motorista.html?id=' + dados.id + ''
     })
 }

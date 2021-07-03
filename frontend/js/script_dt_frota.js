@@ -23,7 +23,7 @@ async function pegar_dados(id) {
 
     this.preencher_dados(dados)
     this.redireciona(dados)
-
+    this.redirecionar_editar(dados)
 }
 
 
@@ -94,5 +94,15 @@ function redireciona(dados) {
         else {
             window.location.href = 'detalhe_motorista.html?id=' + dados.Motors[0].id + ''
         }
+    })
+}
+
+
+
+//Função para redirecionar para a pagina de edição
+function redirecionar_editar(dados) {
+    let btn_redi_edit = document.getElementById('redireciona_edit');
+    btn_redi_edit.addEventListener('click', () => {
+        window.location.href = 'edicao_frota.html?id=' + dados.id + ''
     })
 }

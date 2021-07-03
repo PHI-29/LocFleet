@@ -23,7 +23,7 @@ module.exports = {
       },
       dtNascimento:{
         allowNull: false,
-        type:Sequelize.DATE
+        type:Sequelize.STRING
       },
       cpf:{
         allowNull: false,
