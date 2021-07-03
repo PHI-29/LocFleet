@@ -14,10 +14,6 @@ function redireciona_motorista(){
     window.location.href = "motorista.html";
 }
 
-function redireciona_notificacoes(){
-    window.location.href = "notificação.html";
-}
-
 function redireciona_mais(){
     window.location.href = "saiba_mais.html";
 }
