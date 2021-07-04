@@ -3,15 +3,12 @@ const { Usuario } = require('../models/');
 const usuarioRouter = require('./usuario');
 const veiculoRouter = require('./veiculo');
 const motoristaRouter = require('./motorista');
+const autenticacao = require('../middleware/autenticacao')
 const jwt = require('jsonwebtoken');
 const routes = Router();
 
 routes.get('/', (req, res) => {
-    res.status(200).json({ mensagem: "Hello World"});
-})
-
-routes.get('/oi', verificarJWT, (req, res) => {
-    res.status(200).json({ mensagem: "rota oi"});
+    res.status(200).json({ mensagem: "Rota principal"});
 })
 
 routes.use('/usuario', usuarioRouter);
@@ -31,7 +28,7 @@ routes.post('/login', async (req, res) => {
         if (req.body.email === findUser.email && req.body.senha === findUser.senha) {
 
             let id = findUser.id // Id do banco
-            const  token = jwt.sign({ id }, process.env.ACCESS_SECRET, {
+            const  token = jwt.sign({ id }, process.env.JWT_KEY, {
                 expiresIn: "1h"
             })
             return res.status(200).json({
@@ -41,12 +38,9 @@ routes.post('/login', async (req, res) => {
                 token
             })
             
-        } else {
-            return res.status(401).json({ mensagem: "Usuário não autorizado" })
-        }
-    } else {
-        return res.status(401).json({ mensagem: "Usuário não autorizado" })
-    }
+        } else { return res.status(401).json({ mensagem: "Usuário não autorizado" }) }
+
+    } else { return res.status(401).json({ mensagem: "Usuário não autorizado" }) }
 });
 
 
@@ -56,17 +50,5 @@ routes.post('/logout', async (req, res) => {
         token: null
     })
 });
-
-
-function verificarJWT(req, res, next){
-    const token = req.headers['x-access-token'];
-    if(!token) return res.status(401).json({ mensagem: "Não autorizado" });
-
-    jwt.verify(token, process.env.ACCESS_SECRET, function(erro, decoded){
-        if(erro) return res.status(401).json({ mensagem: "Não autorizado" });
-        req.usuarioId = decoded
-        next()
-    })
-}
 
 module.exports = routes; 

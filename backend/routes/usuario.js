@@ -1,14 +1,13 @@
 const { Router } = require('express');
 const UsuarioController = require('../controllers/usuarioController');
+const autenticacao = require('../middleware/autenticacao')
 const routes = Router();
 
-routes.get('/listar', UsuarioController.getAll);
+routes.get('/listar/id/:id', autenticacao, UsuarioController.getOne);
 
-routes.get('/listar/id/:id', UsuarioController.getOne);
+routes.post('/add', autenticacao, UsuarioController.create);
 
-routes.post('/add', UsuarioController.create);
-
-routes.delete('/del/:id', UsuarioController.delete);
+routes.delete('/del/:id', autenticacao, UsuarioController.delete);
 
 routes.put('/upd/:id', UsuarioController.update);
 
