@@ -3,16 +3,100 @@ const VeiculoController = require('../controllers/veiculoController');
 const autenticacao = require('../middleware/autenticacao')
 const routes = Router();
 
-routes.get('/listar',  VeiculoController.getAll);
+routes.get('/listar',  VeiculoController.getAll
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
 
-routes.get('/listar/:modelo', VeiculoController.getAllModelo);
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
 
-routes.get('/listar/id/:id', autenticacao, VeiculoController.getOne);
+*/);
 
-routes.post('/add',  autenticacao, VeiculoController.create);
+routes.get('/listar/:modelo', VeiculoController.getAllModelo
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
 
-routes.delete('/del/:id', autenticacao, VeiculoController.delete);
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
 
-routes.put('/upd/:id', autenticacao, VeiculoController.update);
+*/);
+
+routes.get('/listar/id/:id', autenticacao, VeiculoController.getOne
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
+
+*/);
+
+routes.post('/add',  autenticacao, VeiculoController.create
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
+
+*/);
+
+routes.delete('/del/:id', autenticacao, VeiculoController.delete
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
+
+*/);
+
+routes.put('/upd/:id', autenticacao, VeiculoController.update
+/*  
+    #swagger.tags = ['Veículo'] 
+    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+
+    #swaggwe.response[200]={
+        schema: {$ref: #/description/Veiculo}
+        description: 'Mensagem enviada com sucesso'
+    }
+    #swaggwe.response[400]={
+        schema: {mensagem: "Veículo não encontrado"}
+        description: 'Veículo não encontrado'
+    }
+
+*/);
 
 module.exports = routes;

@@ -26,7 +26,18 @@ routes.use('/veiculo', veiculoRouter);
 routes.use('/motorista', motoristaRouter);
 
 routes.post('/login', async (req, res) => {
-
+ /*  #swagger.tags = ['Usuario login/logout'] 
+        #swagger.description = 'responsavel por fazer o login do usuario'
+    
+        #swaggwe.response[200]={
+            schema: {application/json}
+            description: 'Mensagem enviada com sucesso'
+        }
+        #swaggwe.response[401]={
+            schema: {mensagem: "Usuário não autorizado"}
+            description: 'Usuário não autorizado'
+        }
+    */
     const findUser = await Usuario.findOne({
         where: { email: req.body.email }
     })
@@ -52,7 +63,16 @@ routes.post('/login', async (req, res) => {
 });
 
 
-routes.post('/logout', async (req, res) => {
+routes.get('/logout', autenticacao, async (req, res) => {
+    /*  #swagger.tags = ['Usuario login/logout'] 
+        #swagger.description = 'Responsavel por fazer o logout do usuario'
+        #swagger.security = [{"Bearer":[]}]
+    
+        #swaggwe.response[200]={
+            schema: {auth: false, token: null}
+            description: 'Retorna a autenticação falsa e zera o token'
+        },
+    */
     return res.status(200).json({
         auth: false,
         token: null

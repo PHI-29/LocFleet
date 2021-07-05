@@ -2,17 +2,29 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "API LocFleet, gerenciamento de frotas",
+    "description": "Essa API tem como objetivo promover o gerenciamento de frotas para o usuário, listando os veículos e motoristas cadastrados, com seus respectivos dados, e a locação de cada veículo atualizada com seus valores."
   },
   "host": "localhost:3000",
   "basePath": "/",
   "tags": [],
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
-  "consumes": [],
-  "produces": [],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/": {
       "get": {
@@ -30,8 +42,10 @@
     },
     "/login": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuario login/logout"
+        ],
+        "description": "responsavel por fazer o login do usuario",
         "parameters": [
           {
             "name": "obj",
@@ -60,9 +74,11 @@
       }
     },
     "/logout": {
-      "post": {
-        "tags": [],
-        "description": "",
+      "get": {
+        "tags": [
+          "Usuario login/logout"
+        ],
+        "description": "responsavel por fazer o login do usuario",
         "parameters": [],
         "responses": {
           "200": {
@@ -73,14 +89,17 @@
     },
     "/usuario/listar/id/{id}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Responsavel por selecionar um usuário pelo parametro Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id usuário"
           }
         ],
         "responses": {
@@ -93,13 +112,20 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/usuario/add": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Responsavel por adicionar um novo usuário",
         "parameters": [
           {
             "name": "obj",
@@ -145,19 +171,27 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/usuario/del/{id}": {
       "delete": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Responsavel por deletar um usuario selecionado pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do usuário"
           }
         ],
         "responses": {
@@ -170,19 +204,27 @@
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/usuario/upd/{id}": {
       "put": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Usuário"
+        ],
+        "description": "Responsavel por atualizar um usuario selecionado pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do usuário"
           }
         ],
         "responses": {
@@ -192,13 +234,20 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/veiculo/listar": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [],
         "responses": {
           "200": {
@@ -212,8 +261,10 @@
     },
     "/veiculo/listar/{modelo}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [
           {
             "name": "modelo",
@@ -234,8 +285,10 @@
     },
     "/veiculo/listar/id/{id}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -259,8 +312,10 @@
     },
     "/veiculo/add": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [
           {
             "name": "obj",
@@ -320,8 +375,10 @@
     },
     "/veiculo/del/{id}": {
       "delete": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -345,8 +402,10 @@
     },
     "/veiculo/upd/{id}": {
       "put": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Veículo"
+        ],
+        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -370,8 +429,10 @@
     },
     "/motorista/listar": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [],
         "responses": {
           "200": {
@@ -385,8 +446,10 @@
     },
     "/motorista/listar/{nome}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [
           {
             "name": "nome",
@@ -410,8 +473,10 @@
     },
     "/motorista/listar/id/{id}": {
       "get": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -435,8 +500,10 @@
     },
     "/motorista/add": {
       "post": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [
           {
             "name": "obj",
@@ -499,8 +566,10 @@
     },
     "/motorista/del/{id}": {
       "delete": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -524,8 +593,10 @@
     },
     "/motorista/upd/{id}": {
       "put": {
-        "tags": [],
-        "description": "",
+        "tags": [
+          "Motorista"
+        ],
+        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
         "parameters": [
           {
             "name": "id",
@@ -578,5 +649,137 @@
       }
     }
   },
-  "definitions": {}
+  "definitions": {
+    "Usuario": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "nome@email.com"
+        },
+        "nome": {
+          "type": "string",
+          "example": "Nome"
+        },
+        "sobrenome": {
+          "type": "string",
+          "example": "Sobrenome"
+        },
+        "dtNascimento": {
+          "type": "string",
+          "example": "2000-01-01"
+        },
+        "cpf": {
+          "type": "number",
+          "example": 136348168
+        },
+        "telefone": {
+          "type": "number",
+          "example": 3101010101
+        },
+        "celular": {
+          "type": "number",
+          "example": 31910101010
+        },
+        "senha": {
+          "type": "string",
+          "example": "Aa11111"
+        }
+      }
+    },
+    "Veiculo": {
+      "type": "object",
+      "properties": {
+        "modelo": {
+          "type": "string",
+          "example": "Gol"
+        },
+        "marca": {
+          "type": "string",
+          "example": "Volkswagen"
+        },
+        "ano": {
+          "type": "number",
+          "example": 2007
+        },
+        "placa": {
+          "type": "string",
+          "example": "aaa1111"
+        },
+        "renavam": {
+          "type": "number",
+          "example": 2130440
+        },
+        "cor": {
+          "type": "string",
+          "example": "prata"
+        },
+        "km": {
+          "type": "number",
+          "example": 300000
+        },
+        "ulRevisao": {
+          "type": "string",
+          "example": "2015-01-01"
+        },
+        "loc": {
+          "type": "string",
+          "example": "Estacionamento empresa"
+        },
+        "valor": {
+          "type": "number",
+          "example": 0
+        }
+      }
+    },
+    "Motorista": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "nome@email.com"
+        },
+        "nome": {
+          "type": "string",
+          "example": "Nome"
+        },
+        "sobrenome": {
+          "type": "string",
+          "example": "Sobrenome"
+        },
+        "dtNascimento": {
+          "type": "string",
+          "example": "2000-01-01"
+        },
+        "cpf": {
+          "type": "number",
+          "example": 136348168
+        },
+        "tel": {
+          "type": "number",
+          "example": 3101010101
+        },
+        "cel": {
+          "type": "number",
+          "example": 31910101010
+        },
+        "dtEmissao": {
+          "type": "string",
+          "example": "2019-01-01"
+        },
+        "dtvencimento": {
+          "type": "string",
+          "example": "2029-01-01"
+        },
+        "numCNH": {
+          "type": "number",
+          "example": 136348168
+        },
+        "cep": {
+          "type": "number",
+          "example": 266305
+        }
+      }
+    }
+  }
 }
