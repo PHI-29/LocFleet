@@ -8,6 +8,14 @@ const jwt = require('jsonwebtoken');
 const routes = Router();
 
 routes.get('/', (req, res) => {
+    /*  #swagger.tags = ['ROTA PRINCIPAL'] 
+        #swagger.description = 'Uma rota básica de teste que retorna uma mensagem:"Rota principal"'
+    
+        #swaggwe.response[200]={
+            schema: {mensagem: 'Rota principal'}
+            description: 'Mensagem enviada com sucesso'
+        }
+    */
     res.status(200).json({ mensagem: "Rota principal"});
 })
 
