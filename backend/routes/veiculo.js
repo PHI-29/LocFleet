@@ -6,95 +6,121 @@ const routes = Router();
 routes.get('/listar',  VeiculoController.getAll
 /*  
     #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+    #swagger.summary = 'Lista os veículos'
+    #swagger.description = 'Responsavel por listar todos os veículo cadastrados'
 
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna uma lista com todos os veículos'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+    #swagger.responses[400]={
+        schema: {mensagem: "Veículos não foram encontrados"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
 
 routes.get('/listar/:modelo', VeiculoController.getAllModelo
 /*  
-    #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
-
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.tags = ['Veículo']
+    #swagger.summary = 'Lista os veículos de acodor com o modelo'
+    #swagger.description = 'Responsavel por listar todos os veículo cadastrados selecionados pelo modelo'
+    #swagger.parameters['modelo'] = {
+        type: 'String',
+        description: 'Modelo do veículo'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna os veículos de acordo com o modelo'
+    }
+    #swagger.responses[400]={
+        schema: {mensagem: "Veículos não foram encontrados"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
 
 routes.get('/listar/id/:id', autenticacao, VeiculoController.getOne
 /*  
-    #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
-
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.tags = ['Veículo']
+    #swagger.summary = 'Listar o veículo pelo id'
+    #swagger.description = 'Responsavel por retornar um veículo selecionar pelo Id'
+    #swagger.security = [{"Bearer":[]}]
+    #swagger.parameters['id'] = {
+        type: 'Integer',
+        description: 'Id do veículo'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna o veículo selecionado'
+    }
+    #swagger.responses[400]={
+        schema: {mensagem: "Veículo não encontrado"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
 
 routes.post('/add',  autenticacao, VeiculoController.create
 /*  
-    #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
+    #swagger.tags = ['Veículo']
+    #swagger.summary = 'Adiciona um veículo'
+    #swagger.description = 'Responsavel por adicionar um novo veículo'
+    #swagger.security = [{"Bearer":[]}]
 
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna o veículo atualizado'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+    #swagger.responses[400]={
+        schema: {mensagem: "falta de dados ou dados informados de forma errada"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
 
 routes.delete('/del/:id', autenticacao, VeiculoController.delete
 /*  
-    #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
-
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.tags = ['Veículo']
+    #swagger.summary = 'Deleta um veículo'
+    #swagger.description = 'Responsavel por deletar um veículo selecionado seu id'
+    #swagger.security = [{"Bearer":[]}]
+    #swagger.parameters['id'] = {
+        type: 'Integer',
+        description: 'Id do veículo'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna o veículo excluido'
+    }
+    #swagger.responses[400]={
+        schema: {mensagem: "Veículo não encontrado"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
 
 routes.put('/upd/:id', autenticacao, VeiculoController.update
 /*  
-    #swagger.tags = ['Veículo'] 
-    #swagger.description = 'responsavel por selecionar o id usuario do Veículo pelo parametro'
-
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Veiculo}
-        description: 'Mensagem enviada com sucesso'
+    #swagger.tags = ['Veículo']
+    #swagger.summary = 'Atualizar o veículo'
+    #swagger.description = 'Responsavel por atualizar um veículo selecionado pelo Id'
+    #swagger.security = [{"Bearer":[]}]
+    #swagger.parameters['id'] = {
+        type: 'Integer',
+        description: 'Id do veículo'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Veículo não encontrado"}
-        description: 'Veículo não encontrado'
+
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Veiculo'},
+        description: 'Retorna o veículo atualizado'
+    }
+    #swagger.responses[400]={
+        schema: {mensagem: "Veículo não encontrado"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);

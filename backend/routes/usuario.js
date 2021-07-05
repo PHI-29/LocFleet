@@ -6,20 +6,21 @@ const routes = Router();
 routes.get('/listar/id/:id', autenticacao, UsuarioController.getOne
 /*      
     #swagger.tags = ['Usuário']
-    #swagger.description = 'Responsavel por selecionar um usuário pelo parametro Id'
+    #swagger.summary = 'Listar o usuario pelo id'
+    #swagger.description = 'Responsavel por retornar um usuário selecionar pelo Id'
     #swagger.security = [{"Bearer":[]}]
     #swagger.parameters['id'] = {
         type: 'Integer',
-        description: 'Id usuário'
+        description: 'Id do usuário'
     }
 
-    #swaggwe.response[200]={
-        schema: {$ref: '#/description/Usuario'},
-        description: 'Retorna um usuário
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Usuario'},
+        description: 'Retorna o usuário selecionado'
     }
-    #swaggwe.response[400]={
+    #swagger.responses[400]={
         schema: {mensagem: "Usuário não encontrado"},
-        description: 'Retorna uma mensagem usuário não encontrado'
+        description: 'Retorna uma mensagem de error'
     }
 
 */);
@@ -27,16 +28,17 @@ routes.get('/listar/id/:id', autenticacao, UsuarioController.getOne
 routes.post('/add', autenticacao, UsuarioController.create
 /*      
     #swagger.tags = ['Usuário']
+    #swagger.summary = 'Adicionar o usuario'
     #swagger.description = 'Responsavel por adicionar um novo usuário'
     #swagger.security = [{"Bearer":[]}]
     
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Usuario},
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Usuario'},
         description: 'Retorna o usuário cadastrado'
     }
-    #swaggwe.response[400]={
-        schema: {mensagem: "Usuário não encontrado"},
-        description: 'Retorna um erro por falta de dados ou dados informados de forma errada.'
+    #swagger.responses[400]={
+        schema: {mensagem: "falta de dados ou dados informados de forma errada"},
+        description: 'Retorna uma mensagem de erro'
     }
 
 */);
@@ -44,20 +46,21 @@ routes.post('/add', autenticacao, UsuarioController.create
 routes.delete('/del/:id', autenticacao, UsuarioController.delete
 /*      
     #swagger.tags = ['Usuário']
-    #swagger.description = 'Responsavel por deletar um usuario selecionado pelo Id'
+    #swagger.summary = 'Deleta o usuário'
+    #swagger.description = 'Responsavel por deletar um usuario selecionado seu id'
     #swagger.security = [{"Bearer":[]}]
     #swagger.parameters['id'] = {
         type: 'Integer',
         description: 'Id do usuário'
     }
     
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Usuario},
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Usuario'},
         description: 'Retorna o usuário excluido'
     }
-    #swaggwe.response[400]={
+    #swagger.responses[400]={
         schema: {mensagem: "Usuário não encontrado"},
-        description: 'Retorna uma mensagem usuário não encontrado'
+        description: 'Retorna uma mensagem de error'
     }
 
 */);
@@ -65,6 +68,7 @@ routes.delete('/del/:id', autenticacao, UsuarioController.delete
 routes.put('/upd/:id', autenticacao, UsuarioController.update
 /*
     #swagger.tags = ['Usuário']
+    #swagger.summary = 'Atualizar o usuário'
     #swagger.description = 'Responsavel por atualizar um usuario selecionado pelo Id'
     #swagger.security = [{"Bearer":[]}]
     #swagger.parameters['id'] = {
@@ -72,13 +76,13 @@ routes.put('/upd/:id', autenticacao, UsuarioController.update
         description: 'Id do usuário'
     }
     
-    #swaggwe.response[200]={
-        schema: {$ref: #/description/Usuario},
+    #swagger.responses[200]={
+        schema: {$ref: '#/definitions/Usuario'},
         description: 'Retorna o usuário atualizado'
     }
-    #swaggwe.response[400]={
+    #swagger.responses[400]={
         schema: {mensagem: "Usuário não encontrado"},
-        description: 'Retorna uma mensagem usuário não encontrado'
+        description: 'Retorna uma mensagem de error'
     }
     
 */);

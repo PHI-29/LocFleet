@@ -78,13 +78,21 @@
         "tags": [
           "Usuario login/logout"
         ],
-        "description": "responsavel por fazer o login do usuario",
+        "description": "Responsavel por fazer o logout do usuario",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/usuario/listar/id/{id}": {
@@ -92,22 +100,38 @@
         "tags": [
           "Usuário"
         ],
-        "description": "Responsavel por selecionar um usuário pelo parametro Id",
+        "summary": "Listar o usuario pelo id",
+        "description": "Responsavel por retornar um usuário selecionar pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "Integer",
-            "description": "Id usuário"
+            "description": "Id do usuário"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o usuário selecionado",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Usuário não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -125,6 +149,7 @@
         "tags": [
           "Usuário"
         ],
+        "summary": "Adicionar o usuario",
         "description": "Responsavel por adicionar um novo usuário",
         "parameters": [
           {
@@ -163,10 +188,25 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o usuário cadastrado",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "falta de dados ou dados informados de forma errada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -184,7 +224,8 @@
         "tags": [
           "Usuário"
         ],
-        "description": "Responsavel por deletar um usuario selecionado pelo Id",
+        "summary": "Deleta o usuário",
+        "description": "Responsavel por deletar um usuario selecionado seu id",
         "parameters": [
           {
             "name": "id",
@@ -196,10 +237,25 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o usuário excluido",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Usuário não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -217,6 +273,7 @@
         "tags": [
           "Usuário"
         ],
+        "summary": "Atualizar o usuário",
         "description": "Responsavel por atualizar um usuario selecionado pelo Id",
         "parameters": [
           {
@@ -229,10 +286,28 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o usuário atualizado",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Usuário não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
@@ -247,14 +322,30 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Lista os veículos",
+        "description": "Responsavel por listar todos os veículo cadastrados",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna uma lista com todos os veículos",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Veículos não foram encontrados"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -264,21 +355,38 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Lista os veículos de acodor com o modelo",
+        "description": "Responsavel por listar todos os veículo cadastrados selecionados pelo modelo",
         "parameters": [
           {
             "name": "modelo",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "String",
+            "description": "Modelo do veículo"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna os veículos de acordo com o modelo",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Veículos não foram encontrados"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -288,26 +396,48 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Listar o veículo pelo id",
+        "description": "Responsavel por retornar um veículo selecionar pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do veículo"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o veículo selecionado",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Veículo não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/veiculo/add": {
@@ -315,7 +445,8 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Adiciona um veículo",
+        "description": "Responsavel por adicionar um novo veículo",
         "parameters": [
           {
             "name": "obj",
@@ -362,15 +493,35 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o veículo atualizado",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "falta de dados ou dados informados de forma errada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/veiculo/del/{id}": {
@@ -378,26 +529,48 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Deleta um veículo",
+        "description": "Responsavel por deletar um veículo selecionado seu id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do veículo"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o veículo excluido",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Veículo não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/veiculo/upd/{id}": {
@@ -405,26 +578,48 @@
         "tags": [
           "Veículo"
         ],
-        "description": "responsavel por selecionar o id usuario do Veículo pelo parametro",
+        "summary": "Atualizar o veículo",
+        "description": "Responsavel por atualizar um veículo selecionado pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do veículo"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o veículo atualizado",
+            "schema": {
+              "$ref": "#/definitions/Veiculo"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Veículo não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/motorista/listar": {
@@ -432,14 +627,30 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Lista os motoristas",
+        "description": "Responsavel por listar todos os motoristas cadastrados",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna uma lista com todos os motoristas",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Motoristas não foram encontrados"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -449,24 +660,38 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Lista os motoristas de acodor com o nome",
+        "description": "Responsavel por listar todos os motoristas cadastrados selecionados pelo nome",
         "parameters": [
           {
             "name": "nome",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "String",
+            "description": "Nome do motorista"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna os motoristas de acordo com o nome",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Motoristas não foram encontrados"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -476,26 +701,48 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Listar o motorista pelo id",
+        "description": "Responsavel por retornar um motorista selecionar pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do motorista"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna um motorista",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Motorista não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/motorista/add": {
@@ -503,7 +750,8 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Adiciona um motorista",
+        "description": "Responsavel por adicionar um novo motorista",
         "parameters": [
           {
             "name": "obj",
@@ -553,15 +801,35 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o motorista cadastrado",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "falta de dados ou dados informados de forma errada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/motorista/del/{id}": {
@@ -569,26 +837,48 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Deleta um motorista",
+        "description": "Responsavel por deletar um motorista selecionado seu id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do motorista"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o motorista excluido",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Motorista não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/motorista/upd/{id}": {
@@ -596,13 +886,15 @@
         "tags": [
           "Motorista"
         ],
-        "description": "responsavel por selecionar o id usuario do Motorista pelo parametro",
+        "summary": "Atualizar o motorista",
+        "description": "Responsavel por atualizar um motorista selecionado pelo Id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "Integer",
+            "description": "Id do motorista"
           },
           {
             "name": "obj",
@@ -637,15 +929,35 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna o motorista atualizado",
+            "schema": {
+              "$ref": "#/definitions/Motorista"
+            }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Retorna uma mensagem de erro",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Motorista não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     }
   },
