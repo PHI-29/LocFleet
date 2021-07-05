@@ -31,11 +31,24 @@
         "tags": [
           "ROTA PRINCIPAL"
         ],
-        "description": "Uma rota básica de teste que retorna uma mensagem:\"Rota principal\"",
+        "summary": "Rota principal",
+        "description": "Uma rota básica de teste do servidor",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna uma mensagem",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Teste"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -45,7 +58,8 @@
         "tags": [
           "Usuario login/logout"
         ],
-        "description": "responsavel por fazer o login do usuario",
+        "summary": "Login do usuário",
+        "description": "Responsavel por fazer o login do usuario",
         "parameters": [
           {
             "name": "obj",
@@ -65,10 +79,34 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna uma mensagem",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Usuário autorizado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Retorna uma mensagem de error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Usuário não autorizado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -78,11 +116,12 @@
         "tags": [
           "Usuario login/logout"
         ],
+        "summary": "Logout do usuário",
         "description": "Responsavel por fazer o logout do usuario",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna authorization false e anula o token"
           },
           "401": {
             "description": "Unauthorized"
