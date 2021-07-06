@@ -3,7 +3,7 @@ const VeiculoController = require('../controllers/veiculoController');
 const autenticacao = require('../middleware/autenticacao')
 const routes = Router();
 
-routes.get('/listar',  VeiculoController.getAll
+routes.get('/listar', VeiculoController.getAll
 /*  
     #swagger.tags = ['Veículo'] 
     #swagger.summary = 'Lista os veículos'
@@ -63,7 +63,7 @@ routes.get('/listar/id/:id', autenticacao, VeiculoController.getOne
 
 */);
 
-routes.post('/add',  autenticacao, VeiculoController.create
+routes.post('/add', autenticacao, VeiculoController.create
 /*  
     #swagger.tags = ['Veículo']
     #swagger.summary = 'Adiciona um veículo'
