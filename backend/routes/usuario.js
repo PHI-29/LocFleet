@@ -25,12 +25,12 @@ routes.get('/listar/id/:id', autenticacao, UsuarioController.getOne
 
 */);
 
-routes.post('/add', UsuarioController.create
+routes.post('/add',  UsuarioController.create 
 /*      
     #swagger.tags = ['Usuário']
     #swagger.summary = 'Adicionar o usuario'
     #swagger.description = 'Responsavel por adicionar um novo usuário'
-    
+
     #swagger.responses[200]={
         schema: {$ref: '#/definitions/Usuario'},
         description: 'Retorna o usuário cadastrado'

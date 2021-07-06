@@ -9,7 +9,7 @@ const docs = {
         "title": "API LocFleet, gerenciamento de frotas",
         "description": "Essa API tem como objetivo promover o gerenciamento de frotas para o usuário, listando os veículos e motoristas cadastrados, com seus respectivos dados, e a locação de cada veículo atualizada com seus valores."
     },
-    "host": "localhost:3000",
+    "host": "https://loc-fleet.herokuapp.com",
     "basePath": "/",
     "tags": [],
     "schemes": [
