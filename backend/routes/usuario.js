@@ -25,12 +25,11 @@ routes.get('/listar/id/:id', autenticacao, UsuarioController.getOne
 
 */);
 
-routes.post('/add', autenticacao, UsuarioController.create
+routes.post('/add', UsuarioController.create
 /*      
     #swagger.tags = ['Usuário']
     #swagger.summary = 'Adicionar o usuario'
     #swagger.description = 'Responsavel por adicionar um novo usuário'
-    #swagger.security = [{"Bearer":[]}]
     
     #swagger.responses[200]={
         schema: {$ref: '#/definitions/Usuario'},
